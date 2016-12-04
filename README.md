@@ -1,79 +1,99 @@
-# 码志
+# Uno for Ghost
 
-我的个人博客：<http://mazhuang.org>，欢迎 Star 和 Fork。
 
-## 概览
+Uno for Ghost is the result of my first 'mini-project' of 2014. The theme features a minimal, responsive design with a cover page, disqus comment integration, foundation icons and various colour options.
 
-<!-- vim-markdown-toc GFM -->
-* [效果预览](#效果预览)
-* [Fork 指南](#fork-指南)
-* [贴心提示](#贴心提示)
-* [经验与思考](#经验与思考)
-* [致谢](#致谢)
 
-<!-- vim-markdown-toc -->
+## Demo
+There's a demo of the theme running on my personal website, [daleanthony.com](http://daleanthony.com)
 
-## 效果预览
 
-**[在线预览 &rarr;](http://mazhuang.org)**
+## Features
 
-![screenshot home](http://mazhuang.org/assets/images/screenshots/home.png)
+**Cover page**
+The landing page for Uno is a full screen 'cover' featuring your avatar, blog title, mini-bio and cover image.
 
-## Fork 指南
+**Built with SASS, using BEM**
+If you know HTML and CSS making modifications to the theme should be super simple.
 
-Fork 本项目之后，还需要做一些事情才能让你的页面「正确」跑起来。
+**Responsive**
+Uno looks great on all devices, even those weird phablets that nobody buys.
 
-1. 正确设置项目名称与分支。
+**Disqus comments**
+Disqus integration allows users to comment on your posts.
 
-   按照 GitHub Pages 的规定，名称为 `username.github.io` 的项目的 master 分支，或者其它名称的项目的 gh-pages 分支可以自动生成 GitHub Pages 页面。
+**Foundation icons**
+Uno contains the [Foundation icon font by Zurb](http://zurb.com/playground/foundation-icon-fonts-3) which means you can easily add icons. A full list of available icons can be found on the [Foundation Icon](http://zurb.com/playground/foundation-icon-fonts-3) website.
 
-2. 修改域名。
+**No-JS fallback**
+While JS is widely used, some themes and websites don't provide fallback for when no JS is available (I'm looking at you [Squarespace](http://blog.squarespace.com/)). If for some weird reason a visitor has JS disabled your blog will still be useable.
 
-   如果你需要绑定自己的域名，那么修改 CNAME 文件的内容；如果不需要绑定自己的域名，那么删掉 CNAME 文件。
+**1 theme, 5 colour options**
+Uno includes 5 different colour options for you to chose from.
 
-3. 修改配置。
+**Future**
+Ghost is still a work in progress with many features not yet implemented, as Ghost gets updated new features will be added to Uno.
 
-   网站的配置基本都集中在 \_config.yml 文件中，将其中与个人信息相关的部分替换成你自己的，比如网站的 title、subtitle、duoshuo 和 Disqus 的用户名等。
+## FAQs
 
-   **注意：** 因为 Disqus 处理用户名与域名白名单的策略存在缺陷，请一定将 disqus\_username 修改成你自己的。我对该缺陷的记录见 [Issues#2][3]。
+Some common questions are answered on the [Uno FAQ page](http://daleanthony.com/uno-faq/)
 
-4. 删除我的文章与图片。
+## Contact
 
-   如下文件夹中除了 template.md 文件外，都可以全部删除，然后添加你自己的内容。
+The best way to contact me is by [dropping me an email](dale@daleanthony.com) or my messaging me on [Twitter](https://twitter.com/daleanthony)
 
-   * \_posts 文件夹中是我已发布的博客文章。
-   * \_drafts 文件夹中是我尚未发布的博客文章。
-   * \_wiki 文件夹中是我已发布的 wiki 页面。
-   * images 文件夹中是我的文章和页面里使用的图片。
+## Licence
 
-5. 修改「关于」页面。
+[Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/)
 
-   pages/about.md 文件内容对应网站的「关于」页面，里面的内容多为个人相关，将它们替换成你自己的信息。
+## Development
 
-## 贴心提示
+In order to develop or make changes to the theme you will need to have the sass compiler and bourbon both installed.  If you are running a Ghost environment locally then you should already have these installed as those are required to run Ghost.
 
-1. 排版建议遵照一定的规范，推荐 [中文文案排版指北（简体中文版）][1]。
+To check installation run the following commands from a terminal and you should see the `> cli output` but your version numbers may vary.
 
-2. 在本地预览博客效果可以参考 [Setting up your Pages site locally with Jekyll][2]。
+** SASS **
+```bash
 
-## 经验与思考
+sass -v
+> Sass 3.3.4 (Maptastic Maple)
+```
+If for some reason SASS isn't installed follow the instructions from the [Sass install page](http://sass-lang.com/install)
 
-* 简约，尽量每个页面都不展示多余的内容。
+** Bourbon **
+```bash
 
-* 有时一图抵千言，有时可能只会拖慢网页加载速度。
+bourbon help
+> Bourbon 3.1.8
+```
+If Bourbon isn't installed follow the installation instructions on the [Bourbon website](http://bourbon.io)
 
-* 言之有物，不做无痛之呻吟。
+Once installation is verified we will need to go mount the bourbon mixins into the `scss` folder.
 
-* 如果写技术文章，那先将技术原理完全理清了再开始写，一边摸索技术一边组织文章效率较低。
+From the project root run `bourbon install` with the correct path
+```bash
+bourbon install --path assets/scss
+> bourbon files installed to assets/scss/bourbon/
+```
 
-* 杜绝难断句、难理解的长句子，如果不能将其拆分成几个简洁的短句，说明脑中的理解并不清晰。
+Now that we have the bourbon mixins inside of the `scss` src folder we can now use the sass cli command to watch the scss files for changes and recompile them.
 
-* 可以学习一下那些高质量的博主，他们的行文，内容组织方式，有什么值得借鉴的地方。
+```bash
+sass --watch assets/scss:assets/css
+>>>> Sass is watching for changes. Press Ctrl-C to stop.
+```
 
-## 致谢
+** MacOSX Maverick **
 
-本博客外观基于 [DONGChuan](http://dongchuan.github.io) 修改，感谢！
+Some people may receive this error when trying to run the `sass --watch` command
 
-[1]: https://github.com/mzlogin/chinese-copywriting-guidelines
-[2]: https://help.github.com/articles/setting-up-your-pages-site-locally-with-jekyll/
-[3]: https://github.com/mzlogin/mzlogin.github.io/issues/2
+```bash
+> LoadError: cannot load such file -- rb-fsevent
+  Use --trace for backtrace.
+```
+
+This is a known issue with the [Sass on MaxOS Maverick](http://stackoverflow.com/questions/22413834/getting-error-when-using-command-line-for-sass-to-watch-files) as indicated install the `rb-fsevent` gem
+
+```bash
+gem install rb-fsevent
+```
