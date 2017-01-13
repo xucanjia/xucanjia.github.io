@@ -7,12 +7,12 @@ favicon: /favicon.png
 headimg: http://oct8d1mqf.bkt.clouddn.com/2016-10-17-15%3A42%3A28.jpg
 
 # search
-search: 
+search:
     enable: true
     placeholder: Enter Key...
 
 # sidebar
-sidebar: 
+sidebar:
   enable: true
   menus:
     -
@@ -25,9 +25,9 @@ comments:
   duoshuo_username:  yumemor
   #disqus_username: yumemor
 
-# accounts support weibo/github/zhihu/twitter/douban 
+# accounts support weibo/github/zhihu/twitter/douban
 # display to former three
-social: 
+social:
   -
     name: weibo
     link: http://weibo.com/yumemor/
@@ -38,11 +38,11 @@ social:
     name: zhihu
     link: https://www.zhihu.com/people/yumemor
 #  -
-#    name: twitter
-#    link: 
-#  -
-#    name: douban
-#    link: 
+   name: twitter
+   link:
+ -
+   name: douban
+   link:
 
 
 
