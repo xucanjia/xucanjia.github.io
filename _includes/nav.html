@@ -14,7 +14,7 @@
 					{% if site.email %}<li>
                         <a href="mailto:{{ site.email }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-envelope-square"></i> 邮箱</a>
                     </li>{% endif %}
-                    {% if site.twitter %}<li>
+                   <!--  {% if site.twitter %}<li>
                         <a href="http://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
                     </li>{% endif %}
                     {% if site.facebook %}<li>
@@ -34,8 +34,8 @@
                     </li>{% endif %}
                     {% if site.tumblr %}<li>
                         <a href="http://{{ site.tumblr }}.tumblr.com" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-tumblr-square"></i> Tumblr</a>
-                    </li>{% endif %}
-                    {% if site.github-url %}<li>
+                    </li>{% endif %} -->
+                    <!-- {% if site.github-url %}<li>
                         <a href="http://github.com/{{ site.github-url }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-github"></i> Github</a>
                     </li>{% endif %}
                     {% if site.stackoverflow %}<li>
@@ -61,8 +61,8 @@
                     </li>{% endif %}
                     {% if site.youtube-channel %}<li>
                         <a href="https://youtube.com/channel/{{ site.youtube-channel }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-youtube"></i> Youtube</a>
-                    </li>{% endif %}
-                    {% if site.soundcloud %}<li>
+                    </li>{% endif %} -->
+                  <!--   {% if site.soundcloud %}<li>
                         <a href="http://soundcloud.com/{{ site.soundcloud }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-soundcloud"></i> SoundCloud</a>
                     </li>{% endif %}
                     {% if site.weibo %}<li>
@@ -78,18 +78,18 @@
                         <a href="https://keybase.io/{{ site.keybase }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-key"></i> Keybase</a>
                     </li>{% endif %}
                     {% if site.xmpp %}<li>
-                        <a href="xmpp:{{ site.xmpp }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-lightbulb-o"></i> XMPP</a>
-                    </li>{% endif %}
+                        <a href="xmpp:{{ site.xmpp }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-lightbulb-o"></i> XMPP</a> -->
+           <!--          </li>{% endif %}
                     {% if site.hackernews %}<li>
                         <a href="https://news.ycombinator.com/user?id={{ site.hackernews }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-hacker-news"></i> Hacker News</a>
-                    </li>{% endif %}
+                    </li>{% endif %} -->
 				</ul><!-- /.dl-submenu -->
 			</li>
 			<li>
 				<a href="#">Posts</a>
 				<ul class="dl-submenu">
-					<li><a href="{{ site.url }}/posts/">All Posts</a></li>
-					<li><a href="{{ site.url }}/tags/">All Tags</a></li>
+					<li><a href="{{ site.url }}/posts/">文章</a></li>
+					<li><a href="{{ site.url }}/tags/">标签</a></li>
 				</ul>
 			</li>
 			{% for link in site.data.navigation %}
