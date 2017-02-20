@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "第一篇日记"
-date:   2017-01-17
+title:  "sql语句"
+date:   2017-02-20
 excerpt: "这是我的第一篇日记: HELLO WORLD!"
 tag:
 - sample
@@ -9,13 +9,13 @@ tag:
 - video
 comments: true
 ---
-<iframe width="560" height="315" src="//www.youtube.com/embed/SU3kYxJmWuQ" frameborder="0"> </iframe>
+<!--  -->
 
-这是我的个人 [博客](icand.cc),欢迎大家!
-
-这是我试验写的第一篇 `日记`.
+一些少见的sql语句.
 
 {% highlight html %}
-HELLO WORLD!!!
-// 奇怪 怎么没有!
+SELECT * 
+FROM `tbUserInfo` 
+ORDER BY (`ysnum` - `money`
+)
 {% endhighlight %}
