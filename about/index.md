@@ -29,13 +29,7 @@ comments: false
 {% include gallery images=images caption="Screenshots of Moon Theme" cols=2 %}
 
 See a [live version of Moon](http://xucanjia.github.io) hosted on GitHub.
-w w w斯柯达积分卡九点地方安师大啊水电费安师大发水电费安师大啊水电费
-w w w斯柯达积分卡九点地方安师大啊水电费安师大发水电费安师大啊水电费
-w w w斯柯达积分卡九点地方安师大啊水电费安师大发水电费安师大啊水电费
-w w w斯柯达积分卡九点地方安师大啊水电费安师大发水电费安师大啊水电费
-w w w斯柯达积分卡九点地方安师大啊水电费安师大发水电费安师大啊水电费
-w w w斯柯达积分卡九点地方安师大啊水电费安师大发水电费安师大啊水电费
-w w w斯柯达积分卡九点地方安师大啊水电费安师大发水电费安师大啊水电费
+
 
 ## Getting Started
 
