@@ -13,7 +13,7 @@ url:                https://xucanjia.github.io
 # Jekyll
 permalink:          /:title/
 markdown:           kramdown
-highlighter:        rouge
+highlighter:        php
 kramdown:
   auto_ids:         true
   footnote_nr:      1
