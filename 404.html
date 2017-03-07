@@ -1,8 +1,37 @@
 ---
-layout: page
-title: "404"
-permalink: /404
-comments: false
+layout: null
 ---
-<p>There doesn't appear to be anything here. Sorry about that.</p>
-<p>If you've followed a link expecting something to be here, you can <a href="mailto:{{ site.email }}?subject=Page%20not%20found">contact me</a>.</p>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="icon" href="/res/img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/res/img/favicon.ico" type="image/x-icon">
+  <title>找不到页面了...</title>
+  <link rel="stylesheet" href="/res/css/404.css">
+  {% include tongji.html %}
+</head>
+<body>
+  <div id="container">
+    <img src="/res/img/404/404.png" class="png"/>
+  </div>
+  <div class="tips">
+    <p>找不到页面了...</p>
+    <p>一定是你打开方式不对...</p>
+    <p id="view"/>
+  </div>
+  <div id="cloud" class="png"></div>
+</body>
+<script>
+  var t = 5;
+  setInterval("testTime()", 1000);
+  function testTime() {
+    view.innerHTML = t + " 秒后跳转至首页...";
+    if(t == 0) {
+      location="{{ site.blog.url }}";
+    }
+    t--;
+  }
+</script>
+</html>

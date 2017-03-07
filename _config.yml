@@ -1,76 +1,25 @@
-# Site
-title:              canjia
-bio:                '一切, 都会好起来!'
-description:        "Moon is a minimal, one column jekyll theme for your blog."
-reading_time:       true
-words_per_minute:   200
-logo:               'assets/img/logo.png'
-background:         'assets/img/placeholder-big.jpg'
-tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
-locale:             en_US
-url:                https://xucanjia.github.io
+baseurl: /
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title.html
+auto: true
+paginate: 6
+paginate_path: page/:num
 
-# Jekyll
-permalink:          /:title/
-markdown:           kramdown
-highlighter:        php
-kramdown:
-  auto_ids:         true
-  footnote_nr:      1
-  entity_output:    as_char
-  toc_levels:       1..6
-  enable_coderay:   false
-mathjax:            true
-sass:
-  sass_dir:         _sass
-  style:            compressed
-
-# Comments
-disqus_shortname:   taylantatli
-
-# Social
-# if you don't have any of social below, comment the line.
-#google:
-  #plus:            #username
-  #analytics:
-  #verify:
-  #ad-client:
-  #ad-slot:
-#bing-verify:
-#email:
-twitter:            username
-facebook:           username
-github-url:         xucanjia
-#stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
-#linkedin:          username
-#xing:              username
-instagram:          username
-#lastfm:            username
-#tumblr:            username
-#medium:            '@username'
-#pinterest:         username
-#foursquare:        username
-steam:              username
-#dribbble:          username
-#youtube:           username
-#youtube-channel:   channel
-#soundcloud:        username
-weibo:             xucanjia23
-#flickr:            username
-#codepen:           username
-#keybase:           username
-#xmpp:              username@server.com
-#hackernews:        username
-
-# Gems
-gems:
-  - jekyll-mentions
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-gist
-
-jekyll-mentions:
-    base_url: https://github.com
-
-# Exclude list
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
+blog:
+    name: Canjia                                         # 博客名称
+    description:                                         # 博客描述
+    title:                                               # 网页标题
+    url: http://xucanjia.github.io                       # 博客地址
+    duoshuo: icand                                       # 多说ID
+    tongji:                                              # 百度统计ID
+    qiniu:                                               # 七牛云地址
+author:
+    name:                                                # 作者名称
+    email:                                               # 邮箱地址
+    weibo:                                               # 微博地址
+    github: https://github.com/silverd
+    logo: /res/img/me.jpg                                # logo地址
+    douban:
+        name:                                            # 豆瓣地址名称
+        key:                                             # 豆瓣API Key
