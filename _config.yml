@@ -14,11 +14,11 @@ blog:
     duoshuo: icand                                       # 多说ID
     tongji:                                              # 百度统计ID
     qiniu:                                               # 七牛云地址
-author:
+    author:
     name:                                                # 作者名称
     email:                                               # 邮箱地址
-    weibo:                                               # 微博地址
-    github: https://github.com/silverd
+    weibo:  http://weibo.com/xucanjia23?refer_flag=1001030101_                                               # 微博地址
+    github: https://github.com/xucanjia
     logo: /res/img/me.jpg                                # logo地址
     douban:
         name:                                            # 豆瓣地址名称
