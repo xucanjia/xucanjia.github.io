@@ -5,7 +5,7 @@ title: PHP检查身份证方法(收集)
 ---
 ## 检查身份证方法
 ```php
-/********************验证身份证号码是否正确函数*********************/
+
 function is_idcard ( $id )
 {
  $id = strtoupper($id);
@@ -13,40 +13,29 @@ function is_idcard ( $id )
  $arr_split = array();
 
  if(!preg_match($regx, $id)) {
-
    $this->error('请填写正确的身份证号码!');
-
  }
 
  if(15==strlen($id)) {//检查15位
-
    $regx = "/^(\d{6})+(\d{2})+(\d{2})+(\d{2})+(\d{3})$/";
-
    @preg_match($regx, $id, $arr_split);
 
    //检查生日日期是否正确
    $dtm_birth = "19".$arr_split[2] . '/' . $arr_split[3]. '/' .$arr_split[4];
 
    if(!strtotime($dtm_birth)) {
-
      $this->error('请填写正确的身份证号码!');
-
    }
    else {
-
      $this->error('请填写正确的身份证号码!');
-
    }
  }
  else {      //检查18位
-
    $regx = "/^(\d{6})+(\d{4})+(\d{2})+(\d{2})+(\d{3})([0-9]|X)$/";
    @preg_match($regx, $id, $arr_split);
-
    $dtm_birth = $arr_split[2] . '/' . $arr_split[3]. '/' .$arr_split[4];
 
    if(!strtotime($dtm_birth)) { //检查生日日期是否正确
-
      $this->error('请填写正确的身份证号码!');
    }
    else {
@@ -58,29 +47,20 @@ function is_idcard ( $id )
      $sign = 0;
 
      for ( $i = 0; $i < 17; $i++ ){
-
        $b = (int) $id{$i};
        $w = $arr_int[$i];
        $sign += $b * $w;
-
      }
-
      $n = $sign % 11;
      $val_num = $arr_ch[$n];
 
-
      if ($val_num != substr($id,17, 1)){
-
        $this->error('请填写正确的身份证号码!');
-
      }
      else {
-
        return TRUE;
-
      }
    }
  }
-
 }
 ```
