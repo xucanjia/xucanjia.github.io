@@ -142,6 +142,9 @@ a:link {
   margin-top:5%;
   margin-bottom:0;
 }
+.sub-title a:hover {
+  color:yellow;
+}
 #nav {
   margin:5% 0 8% -10%;
 }
