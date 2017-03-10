@@ -8,16 +8,17 @@ title: Thinkphp搜索+分页的问题
 
 涉及到了多条件搜索带分页展示,
 
-于是乎,我又土坑了,因为没有注意一个小东西!!!
+其实,
 
-其实,我是先做好了分页,后面才去做多条件搜索的.先贴一段小代码.
+我是先做好了分页,后面才去做多条件搜索的.先贴一段小代码.
+
 ```html
-        <!--search start-->
-        <form class="searchform" action="__URL__/index" method="POST">
-            <input type="text" class="form-control" name="k" placeholder="Search here..." />
-            <input type="submit" name="搜索">
-        </form>
-        <!--search end-->
+<!--search start-->
+<form class="searchform" action="__URL__/index" method="POST">
+    <input type="text" class="form-control" name="k" placeholder="Search here..." />
+    <input type="submit" name="搜索">
+</form>
+<!--search end-->
 ```
 不知道找到了问题没有?
 
