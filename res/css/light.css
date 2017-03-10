@@ -169,7 +169,7 @@ a:link {
 }
 #nav ul li:hover {
   text-shadow:0 0 1px;
-  background:rgba(3,169,244,0.4);
+  // background:rgba(3,169,244,0.4);
   padding-left:38%;
   transition:padding-left 0.25s;
 }
