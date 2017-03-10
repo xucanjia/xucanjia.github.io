@@ -1,6 +1,6 @@
 ---
 layout: post
-category: ['PHP']
+category: ['Thinkphp']
 title: Thinkphp模型的理解
 ---
 
