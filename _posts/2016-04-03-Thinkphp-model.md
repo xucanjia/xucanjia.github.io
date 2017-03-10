@@ -1,7 +1,7 @@
 ---
 layout: post
 category: ['PHP']
-title: PHP小集
+title: Thinkphp模型的理解
 ---
 
 ### 1、创建一个基础模型：实例化一个系统自带的数据库操作类
