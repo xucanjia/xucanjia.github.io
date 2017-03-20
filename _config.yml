@@ -10,7 +10,7 @@ blog:
     name: Canjia                                        # 博客名称
     description: 一起都会好起来.                                        # 博客描述
     title:                                               # 网页标题
-    url: http://silverd.github.io                        # 博客地址
+    url: http://xucanjia.github.io                        # 博客地址
     duoshuo: icand                                     # 多说ID
     tongji:                                              # 百度统计ID
     qiniu:                                               # 七牛云地址
