@@ -161,7 +161,7 @@ a:link {
   color:#fff;
   // background:rgba(0,80,125,0.35);
   display:block;
-  padding:10px 0 10px 35%;
+  // padding:10px 0 10px 35%;
   text-shadow:0 0 1px;
   width:100%;
   transition:background 0.5s,padding-left 0.5s;
