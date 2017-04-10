@@ -152,8 +152,9 @@ a:link {
   list-style:none;
   display:block;
   text-align:left;
-  font-size:18px;
-  letter-spacing:3px;
+  font-size:19px;
+  margin-left: 25px;
+  letter-spacing:4px;
 }
 #nav ul li {
   color:#fff;
