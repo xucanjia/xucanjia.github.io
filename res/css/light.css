@@ -185,6 +185,9 @@ a:link {
 #nav ul li a:hover {
   color:yellow;
 }
+#sub-nav {
+  margin-left: 20px;
+}
 #sub-nav a {
   border-radius:50%;
   -webkit-border-radius:50%;
