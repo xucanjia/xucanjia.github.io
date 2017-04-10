@@ -186,7 +186,7 @@ a:link {
   color:yellow;
 }
 #sub-nav {
-  margin-left: 20px;
+  margin-left: -19px;
 }
 #sub-nav a {
   border-radius:50%;
