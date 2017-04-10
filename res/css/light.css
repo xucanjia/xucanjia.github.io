@@ -198,7 +198,7 @@ a:link {
   opacity:0.8;
   height:28px;
   width:28px;
-  margin:0 7px 0 7px;
+  margin:0 7px 0 1px;
 }
 #sub-nav a.weibo {
   color:#fff;
@@ -589,7 +589,7 @@ pre code {
     padding-left:0;
   }
   #sub-nav {
-    margin-top:15px;
+    margin-top:-5px;
   }
   #sub-nav a {
     margin:0 5px 0 5px;
