@@ -161,7 +161,7 @@ a:link {
   color:#fff;
   // background:rgba(0,80,125,0.35);
   display:block;
-  // padding:10px 0 10px 35%;
+  padding:10px 0 10px 35%;
   text-shadow:0 0 1px;
   width:100%;
   transition:background 0.5s,padding-left 0.5s;
@@ -171,8 +171,8 @@ a:link {
 }
 #nav ul li:hover {
   text-shadow:0 0 1px;
-  background:rgba(3,169,244,0.4);
-  // padding-left:38%;
+  // background:rgba(3,169,244,0.4);
+  padding-left:38%;
   transition:padding-left 0.25s;
 }
 #nav ul li a {
