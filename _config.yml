@@ -15,6 +15,7 @@ blog:
     tongji:                                              # 百度统计ID
     qiniu:                                               # 七牛云地址
     bgmurl: http://ois5yh1xg.bkt.clouddn.com/%E5%8D%A2%E5%86%A0%E5%BB%B7%E4%B8%80%E7%94%9F%E6%89%80%E7%88%B1.mp3
+    bgurl: /res/music/任意门.mp3
 author:
     name:                                                # 作者名称
     email:                                               # 邮箱地址
