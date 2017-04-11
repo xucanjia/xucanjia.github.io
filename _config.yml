@@ -7,9 +7,9 @@ paginate: 6
 paginate_path: page/:num
 
 blog:
-    name: Canjia                                        # 博客名称
-    description: 一起都会好起来.                                        # 博客描述
-    title:                                               # 网页标题
+    name: Canjia                                         # 博客名称
+    description: 一起都会好起来.                            # 博客描述
+    title:                                                # 网页标题
     url: http://xucanjia.github.io                        # 博客地址
     duoshuo: 2121108                                     # 多说ID
     tongji:                                              # 百度统计ID
@@ -18,7 +18,7 @@ blog:
 author:
     name:                                                # 作者名称
     email:                                               # 邮箱地址
-    weibo:                                               # 微博地址
+    weibo: http://weibo.com/xucanjia23                   # 微博地址
     github: https://github.com/xucanjia
     logo: /res/img/me.jpg                                # logo地址
     douban:
