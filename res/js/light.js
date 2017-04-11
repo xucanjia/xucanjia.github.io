@@ -57,6 +57,6 @@ $(document).ready(function() {
 
     var images = "/res/img/04.gif";
 
-    $(".sidebar").attr('style', 'background-img: url('+images+')');
+    $(".sidebar").attr('style', 'background-image: url('+images+')');
 });
 
