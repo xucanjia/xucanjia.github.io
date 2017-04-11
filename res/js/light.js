@@ -54,9 +54,9 @@ $(document).ready(function() {
     //     fade: 1500,
     //     duration: 15000,
     // })
-    var images = ["/res/img/04.gif"];
-    $(".sidebar").backstretch(images
-    })
+
+    var images = "/res/img/04.gif";
+    $(".sidebar").style.backgroundImg= "url("+images+")";
 
 });
 
