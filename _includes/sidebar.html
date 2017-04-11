@@ -17,8 +17,12 @@
     <!-- <a class="rss" href="/page/feed.xml" title="RSS订阅" target="_blank"><i class="fa fa-rss"></i></a> -->
   </nav>
   <nav id="sub-mic">
-      <embed  autostart="bool" loop="false" align="bottom" width="200" height="100" src="{{ site.blog.bgmurl }}" controls="smallconsole/playbutton/pausebutton/stopbutton/volumelever">
-  </embed>
+    <audio controls>
+      <source src="horse.ogg" >
+      <source src="{{ site.blog.bgmurl }}" >
+    您的浏览器不支持 audio 元素。
+    </audio>
+
   </nav>
 
 </div>
