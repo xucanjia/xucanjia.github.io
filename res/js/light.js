@@ -55,12 +55,7 @@ $(document).ready(function() {
     //     duration: 15000,
     // })
     var images = ["/res/img/04.gif"];
-    images.sort(function() {
-        return Math.random() > 0.5 ? -1 : 1
-    });
-    $(".sidebar").backstretch(images, {
-        fade: 1500,
-        duration: 15000,
+    $(".sidebar").backstretch(images
     })
 
 });
