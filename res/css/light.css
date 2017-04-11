@@ -188,8 +188,9 @@ a:link {
 #sub-nav {
   margin-left: -30px;
 }
+//播放器位置
 #sub-mic {
-  margin-top: 10%;
+  margin-top: 8%;
 }
 #sub-nav a {
   border-radius:50%;
