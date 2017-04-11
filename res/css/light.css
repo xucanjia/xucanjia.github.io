@@ -188,6 +188,9 @@ a:link {
 #sub-nav {
   margin-left: -30px;
 }
+#sub-mic {
+  margin-top: -130px;
+}
 #sub-nav a {
   border-radius:50%;
   -webkit-border-radius:50%;
