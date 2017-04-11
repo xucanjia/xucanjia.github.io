@@ -55,7 +55,7 @@ $(document).ready(function() {
     //     duration: 15000,
     // })
 
-    var images = "../img/bg/04.gif";
+    var images = "/res/img/bg/04.gif";
 
     $(".sidebar").attr('style', 'background-image: url('+images+')');
 });
