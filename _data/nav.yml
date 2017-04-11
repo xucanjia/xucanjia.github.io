@@ -4,12 +4,12 @@
 
 - href: /page/category.html
   icon: fa fa-tags
-  title: 分类
+  title:  分类
 
 - href: /page/read.html
   icon:  fa fa-book
-  title: 阅读
+  title:  阅读
 
 - href: /page/about.html
   icon: fa fa-paper-plane-o
-  title: 关于
+  title:  关于
