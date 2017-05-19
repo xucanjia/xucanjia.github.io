@@ -18,10 +18,26 @@ sudo tar -zxf redis-3.2.8.tar.gz
 ```zsh
 sudo make test
 ```
-出现 `\o/ All tests passed without errors!` 继续下一步
+出现 `\o/ All tests passed without errors!` 继续下一步.
 
 #### 5.redis安装:
 ```zsh
 sudo make install
 ```
 至此,安装已完成、不过还需将redis配置一下
+
+
+安装完Redis后，在终端中输入：
+```zsh
+redis-server
+```
+即可启动Redis服务。
+
+要关闭Redis服务也很简单，先用Redis客户端连上Redis服务，
+```zsh
+redis-cli
+```
+用SHUTDOWN命令即可关闭服务。
+```zsh
+SHUTDOWN
+```
