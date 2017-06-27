@@ -101,7 +101,8 @@ window.open("http://www.baidu.com","_blank","width=600,height=400,top=100,left=0
 
 或
 
-<窗口对象>.close(); 关闭指定的窗口
+`<窗口对象>.close();` 关闭指定的窗口
+
 
 ```javascript
 var win=window.open("http://www.baidu.com");
