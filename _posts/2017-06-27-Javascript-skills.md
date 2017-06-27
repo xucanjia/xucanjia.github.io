@@ -176,7 +176,7 @@ value:
 
 Date 日期对象
 ```javascript
-`var Udate=new Date();`
+var Udate=new Date();
 // 如果要自定义初始值，可以用以下方法：
 var d = new Date(2012, 10, 1);  //2012年10月1日
 var d = new Date('Oct 1, 2012'); //2012年10月1日
