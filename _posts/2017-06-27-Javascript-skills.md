@@ -113,7 +113,7 @@ function winClose(){
 ```
 
 
-## 认识 DOM
+# 认识 DOM
 文档对象模型DOM（Document Object Model）定义访问和处理HTML文档的标准方法。
 
 DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）。
@@ -150,3 +150,35 @@ mychar.style.backgroundColor="#CCC";
 mychar.style.width="300px";
 ```
 ## 显示和隐藏（display属性）
+`Object.style.display = value;`
+value:
+
+`none`  此元素将被隐藏
+
+`block` 此元素将被显示
+
+## 控制类名（className 属性）
+`object.className = classname;`
+
+# 事件
+`onfocus 光标聚焦事件`
+
+`onblur 失焦事件`
+
+`onselect 选中事件`
+
+`onchange 文本框内容改变事件`
+
+`onload 加载事件` 写在<body>标签内
+
+
+# 对象
+
+Date 日期对象
+```javascript
+`var Udate=new Date();`
+// 如果要自定义初始值，可以用以下方法：
+var d = new Date(2012, 10, 1);  //2012年10月1日
+var d = new Date('Oct 1, 2012'); //2012年10月1日
+```
+![如](http://oi2atwmcz.bkt.clouddn.com/date.jpg)
