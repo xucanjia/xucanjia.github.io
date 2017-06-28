@@ -192,23 +192,17 @@ var d = new Date('Oct 1, 2012'); //2012年10月1日
 * `stringObject.toLowerCase()` 将字符串大写字母转换为小写
 
 * `stringObject.charAt(index)` 返回指定位置的字符
-
-   * 参数 index 不在 0 与 string.length-1 之间，该方法将返回一个`空字符串`,`一个空格也算一个字符`
+	* 参数 index 不在 0 与 string.length-1 之间，该方法将返回一个`空字符串`,`一个空格也算一个字符`
 
 * `stringObject.indexOf(substring, startpos)`
-
-   * substring必须,要检索的字符,startpos 可选,不选从首字符开始
-
-   * 返回 substring 的`第一次出现的位置`, 要检索的字符串值没有出现，则该方法返回 `-1`
-
-   * indexOf() 方法区分大小写
+	* substring必须,要检索的字符,startpos 可选,不选从首字符开始
+	* 返回 substring 的`第一次出现的位置`, 要检索的字符串值没有出现，则该方法返回 `-1`
+	* indexOf() 方法区分大小写
 
 * `stringObject.split(separator,limit)` 字符串分割
-
-   * separator 必须,从该参数指定的地方分割
-
-   * limit 可选,分割的次数,如设置该参数,`返回的子串不会多余这个参数指定的数组`,如果无此参数为不限制次数
-   * 如果把空字符串 `("")` 用作 separator，那么 stringObject 中的每个字符之间都会被分割。
+	* separator 必须,从该参数指定的地方分割
+	* limit 可选,分割的次数,如设置该参数,`返回的子串不会多余这个参数指定的数组`,如果无此参数为不限制次数
+	* 如果把空字符串 `("")` 用作 separator，那么 stringObject 中的每个字符之间都会被分割。
 
 ```javascript
 var mystr = "www.xucanjia.com";
@@ -218,3 +212,9 @@ document.write(mystr.split(".", 2)+"<br>");
 document.write(mystr.split("", 5));
 // w,w,w,.,x
 ```
+* `stringObject.substring(startPos,stopPos) ` 提取字符串
+	* startPos 必须,一个非负的整数,开始位置
+	* stopPos 可选,一个非负整数,结束位置,若省略,返回的子串会到对象结尾
+	* 返回的内容是从 start开始(包含start位置的字符)到 stop-1 处的所有字符，其长度为 stop 减start
+	* 如果参数 start 与 stop 相等，那么该方法返回的就是一个空串（即长度为 0 的字符串）
+	* 如果 start 比 stop 大，那么该方法在提取子串之前会先交换这两个参数
