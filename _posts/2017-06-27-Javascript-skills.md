@@ -208,6 +208,8 @@ var d = new Date('Oct 1, 2012'); //2012年10月1日
    * separator 必须,从该参数指定的地方分割
 
    * limit 可选,分割的次数,如设置该参数,`返回的子串不会多余这个参数指定的数组`,如果无此参数为不限制次数
+   * 如果把空字符串 `("")` 用作 separator，那么 stringObject 中的每个字符之间都会被分割。
+
 ```javascript
 var mystr = "www.xucanjia.com";
 document.write(mystr.split(".", 2)+"<br>");
@@ -216,4 +218,3 @@ document.write(mystr.split(".", 2)+"<br>");
 document.write(mystr.split("", 5));
 // w,w,w,.,x
 ```
-   * 如果把空字符串 `("")` 用作 separator，那么 stringObject 中的每个字符之间都会被分割。
