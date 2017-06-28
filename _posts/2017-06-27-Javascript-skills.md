@@ -174,7 +174,7 @@ value:
 
 # 对象
 
-Date 日期对象
+## Date 日期对象
 ```javascript
 var Udate=new Date();
 // 如果要自定义初始值，可以用以下方法：
@@ -182,3 +182,38 @@ var d = new Date(2012, 10, 1);  //2012年10月1日
 var d = new Date('Oct 1, 2012'); //2012年10月1日
 ```
 ![如](http://oi2atwmcz.bkt.clouddn.com/date.jpg)
+
+
+## String 字符串对象
+1. `stringObject.length` 返回该字符串的长度
+
+2. `stringObject.toUpperCase()` 将字符串小写字母转换为大写
+
+3. `stringObject.toLowerCase()` 将字符串大写字母转换为小写
+
+4. `stringObject.charAt(index)` 返回指定位置的字符
+
+参数 index 不在 0 与 string.length-1 之间，该方法将返回一个`空字符串`,`一个空格也算一个字符`
+
+5. `stringObject.indexOf(substring, startpos)`
+
+substring必须,要检索的字符,startpos 可选,不选从首字符开始
+
+返回 substring 的`第一次出现的位置`, 要检索的字符串值没有出现，则该方法返回 `-1`
+
+indexOf() 方法区分大小写
+
+6. `stringObject.split(separator,limit)` 字符串分割
+
+separator 必须,从该参数指定的地方分割
+
+limit 可选,分割的次数,如设置该参数,`返回的子串不会多余这个参数指定的数组`,如果无此参数为不限制次数
+```javascript
+var mystr = "www.xucanjia.com";
+document.write(mystr.split(".", 2)+"<br>");
+// www,xucanjia
+
+document.write(mystr.split("", 5));
+// w,w,w,.,x
+```
+如果把空字符串 `("")` 用作 separator，那么 stringObject 中的每个字符之间都会被分割。
