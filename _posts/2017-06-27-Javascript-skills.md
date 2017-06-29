@@ -124,7 +124,7 @@ HTML文档可以说由节点构成的集合,三种常见的DOM节点:
 
 2.`文本节点:` 向用户展示的内容,如<li>...</li>中的JavaScript、DOM、CSS等文本
 
-3.`属性节点:` 元素属性,如<a>标签的链接属性href="http://www.imooc.com"
+3.`属性节点:` 元素属性,如a标签的链接属性href="http://www.imooc.com"
 
 ### 通过ID获取元素
 `document.getElementById("id");`
@@ -345,27 +345,42 @@ DOM节点层次图
 
 ![](http://oi2atwmcz.bkt.clouddn.com/domjiedian.jpg)
 
-DOM节点有:
+### DOM节点有:
 
 1. `元素节点:` 上图中<html>、<body>、<p>等都是元素节点,即标签
 
 2. `文本节点:` 向用户展示的内容,如<li>...</li>中的JavaScript、DOM、CSS等文本
 
-3. `属性节点:` 元素属性,如<a>标签的链接属性href="http://www.imooc.com"
+3. `属性节点:` 元素属性,如a标签的链接属性href="http://www.imooc.com"
 
 
-* 节点属性
+* `节点属性`
 
 | 方法           | 说明           |
 | ------------- |:-------------:|
-| nodeName      | 返回一个字符串,其内容是给定节点的名字 |
+| nodeName      | 返回一个字符串,其内容是给定节点的名字  |
 | nodeType      | 返回一个整数,这个数值代表给定节点的类型 |
-| nodeValue     | 返回给定节点的当前值                 |
+| nodeValue     | 返回给定节点的当前值                |
+
+* `遍历节点树`
+
+| 方法           | 说明           |
+| ------------- |:-------------:|
+| childNodes      | 返回一个数组,这个数组由给定元素节点的子节点构成  |
+| fistChild       | 返回第一个子节点						    |
+| lastChild       | 返回最后一个子节点       					|
+| parentNode      | 返回一个给定节点的父节点              	    |
+| nextSibling     | 返回给定节点的下一个子节点                	|
+| previousSibling | 返回给定节点的上一个子节点                	|
 
 
+### DOM操作:
 
-| 水果        | 价格    |  数量  |
-| --------   | -----:   | :----: |
-| 香蕉        | $1      |   5    |
-| 苹果        | $1      |   6    |
-| 草莓        | $1      |   7    |
+| 方法           | 说明           |
+| ------------- |:-------------:|
+| createElement(element)      | 创建一个新的元素节点  |
+| createTextNode()       | 创建一个包含着给定文本的新文本节点 |
+| appendChild()       | 返回最后一个子节点列表之后添加一个新的子节点 |
+| insertBefore()      | 将一个给定节点插入到一个给定元素节点的给定子节点的前面 |
+| removeChild()     | 从一个给定元素中删除一个子节点 |
+| replaceChild() | 把一个给定父元素里的一个子节点替换为另外一个节点 |
