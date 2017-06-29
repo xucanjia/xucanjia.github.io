@@ -376,6 +376,7 @@ DOM节点层次图
 
 ### DOM操作:
 
+
 | 方法           | 说明           |
 | ------------- |:-------------:|
 | createElement(element)      | 创建一个新的元素节点  |
@@ -384,3 +385,8 @@ DOM节点层次图
 | insertBefore()      | 将一个给定节点插入到一个给定元素节点的给定子节点的前面 |
 | removeChild()     | 从一个给定元素中删除一个子节点 |
 | replaceChild() | 把一个给定父元素里的一个子节点替换为另外一个节点 |
+
+
+1. `document.getElementsByName(name)` 返回带有指定名称的节点对象的集合
+
+2. `document.getElementsByTagName(Tagname)` 返回带有指定标签名的节点对象的集合。返回元素的顺序是它们在文档中的顺序。
