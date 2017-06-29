@@ -43,7 +43,7 @@ function rec(){
 2.点击取消按钮,将返回 `null`
 ```javascript
 function rec(){
-	var score; //score变量,用来存储用户输入的成绩值。
+	var score; //score变量,用来存储用户输入的成绩值
 	score =prompt("请输入你的成绩",score);
 	if(score>=90)
 	{
@@ -64,19 +64,19 @@ function rec(){
 }
 ```
 ## 打开新窗口 window.open
-`open()` 方法可以查找一个已经存在或者新建的浏览器窗口。
+`open()` 方法可以查找一个已经存在或者新建的浏览器窗口
 
 `window.open([URL], [窗口名称], [参数字符串])`
 
 参数说明:
 
-URL:可选参数,在窗口中要显示网页的网址或路径。如果省略这个参数,或者它的值是空字符串,那么窗口就不显示任何文档。
+URL:可选参数,在窗口中要显示网页的网址或路径 如果省略这个参数,或者它的值是空字符串,那么窗口就不显示任何文档
 
-窗口名称:可选参数,被打开窗口的名称。
+窗口名称:可选参数,被打开窗口的名称
 
-    1.该名称由字母、数字和下划线字符组成。
+    1.该名称由字母、数字和下划线字符组成
 
-    2."_top"、"_blank"、"_self"具有特殊意义的名称。
+    2."_top"、"_blank"、"_self"具有特殊意义的名称
 
        _blank:在新窗口显示目标网页
 
@@ -84,11 +84,11 @@ URL:可选参数,在窗口中要显示网页的网址或路径。如果省略这
 
        _top:框架网页中在上部窗口中显示目标网页
 
-    3.相同 name 的窗口只能创建一个,要想创建多个窗口则 name 不能相同。
+    3.相同 name 的窗口只能创建一个,要想创建多个窗口则 name 不能相同
 
-    4.name 不能包含有空格。
+    4.name 不能包含有空格
 
-参数字符串:可选参数,设置窗口参数,各参数用逗号隔开。
+参数字符串:可选参数,设置窗口参数,各参数用逗号隔开
 ```javascript
 window.open("http://www.baidu.com","_blank","width=600,height=400,top=100,left=0");
 ```
@@ -114,28 +114,28 @@ function winClose(){
 
 
 # 认识 DOM
-文档对象模型DOM（Document Object Model）定义访问和处理HTML文档的标准方法。
+文档对象模型DOM（Document Object Model）定义访问和处理HTML文档的标准方法
 
-DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）。
+DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）
 
 HTML文档可以说由节点构成的集合,三种常见的DOM节点:
 
-1.`元素节点:` 上图中<html>、<body>、<p>等都是元素节点,即标签。
+1.`元素节点:` 上图中<html>、<body>、<p>等都是元素节点,即标签
 
-2.`文本节点:` 向用户展示的内容,如<li>...</li>中的JavaScript、DOM、CSS等文本。
+2.`文本节点:` 向用户展示的内容,如<li>...</li>中的JavaScript、DOM、CSS等文本
 
-3.`属性节点:` 元素属性,如<a>标签的链接属性href="http://www.imooc.com"。
+3.`属性节点:` 元素属性,如<a>标签的链接属性href="http://www.imooc.com"
 
 ### 通过ID获取元素
 `document.getElementById("id");`
 
 ### innerHTML 属性
-`innerHTML` 属性用于`获取或替换 HTML 元素的内容`。
+`innerHTML` 属性用于`获取或替换 HTML 元素的内容`
 注意:
 
-1.Object是获取的`元素对象`,如通过document.getElementById("ID")获取的元素。
+1.Object是获取的`元素对象`,如通过document.getElementById("ID")获取的元素
 
-2.注意书写,`innerHTML区分大小写`。
+2.注意书写,`innerHTML区分大小写`
 
 
 ### 改变 HTML 样式
@@ -202,7 +202,7 @@ var d = new Date('Oct 1, 2012'); //2012年10月1日
 * `stringObject.split(separator,limit)` 字符串分割
 	* separator 必须,从该参数指定的地方分割
 	* limit 可选,分割的次数,如设置该参数,`返回的子串不会多余这个参数指定的数组`,如果无此参数为不限制次数
-	* 如果把空字符串 `("")` 用作 separator,那么 stringObject 中的每个字符之间都会被分割。
+	* 如果把空字符串 `("")` 用作 separator,那么 stringObject 中的每个字符之间都会被分割
 
 ```javascript
 var mystr = "www.xucanjia.com";
@@ -239,7 +239,7 @@ Math 对象是一个`固有的对象`,无需创建它,
 
 * `Math.round(x)` 把一个数字四舍五入为最接近的整数
 	* 返回与 x 最接近的整数
-	* 对于 0.5,该方法将进行上舍入。(5.5 将舍入为 6)
+	* 对于 0.5,该方法将进行上舍入 (5.5 将舍入为 6)
 	* 如果 x 与两侧整数同等接近,则结果接近 +∞方向的数字值(如 -5.5 将舍入为 -5; -5.52 将舍入为 -6)
 
 * `Math.random()` 随机数
@@ -267,6 +267,7 @@ Math 对象是一个`固有的对象`,无需创建它,
 # window 对象
 
 `window对象是BOM的核心,window对象指当前的浏览器窗口`
+
 ![](http://oi2atwmcz.bkt.clouddn.com/bom.jpg)
 
 * 计时器
@@ -281,6 +282,7 @@ Math 对象是一个`固有的对象`,无需创建它,
 		* clearInterval(id_of_setInterval) id_of_setInterval：由 setInterval() 返回的 ID 值
 
 # History 对象
+
 history对象记录了用户曾经浏览过的页面(URL),并可以实现浏览器前进与后退相似导航的功能
 
 * window.history.[属性|方法]
@@ -295,27 +297,31 @@ history对象记录了用户曾经浏览过的页面(URL),并可以实现浏览�
 			* window.history.go(-1);
 
 # Location对象
+
 location用于获取或设置窗体的URL,并且可以用于解析URL
 
 ![](http://oi2atwmcz.bkt.clouddn.com/location.jpg)
 
-* location.(属性|方法)
+* location.(属性/方法)
 	* location 对象属性：
 
 	![对象属性](http://oi2atwmcz.bkt.clouddn.com/location%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7.jpg)
+
 	* location 对象方法：
 
-	![对象属性](http://oi2atwmcz.bkt.clouddn.com/location%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95.jpg)
+	![对象方法](http://oi2atwmcz.bkt.clouddn.com/location%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95.jpg)
 
 
 # Navigator对象
 Navigator 对象包含有关浏览器的信息,通常用于检测浏览器与操作系统的版本
+
 * 对象属性:
 
 ![](http://oi2atwmcz.bkt.clouddn.com/navigator.jpg)
 
-	* navigator.userAgent 返回用户代理头的字符串表示(就是包括浏览器版本信息等的字符串)
-		* ![](http://oi2atwmcz.bkt.clouddn.com/useragent.jpg)
+* navigator.userAgent 返回用户代理头的字符串表示(就是包括浏览器版本信息等的字符串)
+
+![](http://oi2atwmcz.bkt.clouddn.com/useragent.jpg)
 
 # screen对象
 * `window.screen.属性` 获取用户的屏幕信息
@@ -324,4 +330,32 @@ Navigator 对象包含有关浏览器的信息,通常用于检测浏览器与操
 
 * screen.height 返回屏幕分辨率的高
 * screen.width 返回屏幕分辨率的宽
-注:单位以像素计window.screen 对象在编写时可以不使用 window 这个前缀。
+注:单位以像素计window.screen 对象在编写时可以不使用 window 这个前缀
+
+
+* 屏幕可用高和宽度
+	* screen.availWidth 属性返回访问者屏幕的宽度,以像素计,减去界面特性,比如任务栏
+
+	* screen.availHeight 属性返回访问者屏幕的高度,以像素计,减去界面特性,比如任务栏
+
+
+# DOM
+
+DOM节点层次图
+
+![](http://oi2atwmcz.bkt.clouddn.com/domjiedian.jpg)
+```
+DOM节点有:
+
+1. 元素节点：上图中<html>、<body>、<p>等都是元素节点，即标签
+
+2. 文本节点:向用户展示的内容，如<li>...</li>中的JavaScript、DOM、CSS等文本
+
+3. 属性节点:元素属性，如<a>标签的链接属性href="http://www.imooc.com"
+```
+* 节点属性
+| 方法           | 说明           |
+| ------------- |:-------------:|
+| nodeName      | 返回一个字符串,其内容是给定节点的名字 |
+| nodeType      | 返回一个整数,这个数值代表给定节点的类型 |
+| nodeValue     | 返回给定节点的当前值                 |
