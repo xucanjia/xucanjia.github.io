@@ -299,10 +299,12 @@ location用于获取或设置窗体的URL,并且可以用于解析URL
 
 ![](http://oi2atwmcz.bkt.clouddn.com/location.jpg)
 
-* location.[属性|方法]
+* location.(属性|方法)
 	* location 对象属性：
+
 	![对象属性](http://oi2atwmcz.bkt.clouddn.com/location%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7.jpg)
 	* location 对象方法：
+
 	![对象属性](http://oi2atwmcz.bkt.clouddn.com/location%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95.jpg)
 
 
