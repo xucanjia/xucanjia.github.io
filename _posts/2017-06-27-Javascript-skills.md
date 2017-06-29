@@ -177,7 +177,7 @@ value:
 ## Date 日期对象
 ```javascript
 var Udate=new Date();
-// 如果要自定义初始值，可以用以下方法：
+// 如果要自定义初始值,可以用以下方法：
 var d = new Date(2012, 10, 1);  //2012年10月1日
 var d = new Date('Oct 1, 2012'); //2012年10月1日
 ```
@@ -192,17 +192,17 @@ var d = new Date('Oct 1, 2012'); //2012年10月1日
 * `stringObject.toLowerCase()` 将字符串大写字母转换为小写
 
 * `stringObject.charAt(index)` 返回指定位置的字符
-	* 参数 index 不在 0 与 string.length-1 之间，该方法将返回一个`空字符串`,`一个空格也算一个字符`
+	* 参数 index 不在 0 与 string.length-1 之间,该方法将返回一个`空字符串`,`一个空格也算一个字符`
 
 * `stringObject.indexOf(substring, startpos)`
 	* substring必须,要检索的字符,startpos 可选,不选从首字符开始
-	* 返回 substring 的`第一次出现的位置`, 要检索的字符串值没有出现，则该方法返回 `-1`
+	* 返回 substring 的`第一次出现的位置`, 要检索的字符串值没有出现,则该方法返回 `-1`
 	* indexOf() 方法区分大小写
 
 * `stringObject.split(separator,limit)` 字符串分割
 	* separator 必须,从该参数指定的地方分割
 	* limit 可选,分割的次数,如设置该参数,`返回的子串不会多余这个参数指定的数组`,如果无此参数为不限制次数
-	* 如果把空字符串 `("")` 用作 separator，那么 stringObject 中的每个字符之间都会被分割。
+	* 如果把空字符串 `("")` 用作 separator,那么 stringObject 中的每个字符之间都会被分割。
 
 ```javascript
 var mystr = "www.xucanjia.com";
@@ -215,32 +215,32 @@ document.write(mystr.split("", 5));
 * `stringObject.substring(startPos,stopPos) ` 提取字符串
 	* startPos 必须,一个非负的整数,开始位置
 	* stopPos 可选,一个非负整数,结束位置,若省略,返回的子串会到对象结尾
-	* 返回的内容是从 start开始(包含start位置的字符)到 stop-1 处的所有字符，其长度为 stop 减start
-	* 如果参数 start 与 stop 相等，那么该方法返回的就是一个空串（即长度为 0 的字符串）
-	* 如果 start 比 stop 大，那么该方法在提取子串之前会先交换这两个参数
+	* 返回的内容是从 start开始(包含start位置的字符)到 stop-1 处的所有字符,其长度为 stop 减start
+	* 如果参数 start 与 stop 相等,那么该方法返回的就是一个空串（即长度为 0 的字符串）
+	* 如果 start 比 stop 大,那么该方法在提取子串之前会先交换这两个参数
 
 * `stringObject.substr(startPos,length)` 提取指定数目的字符
 	* startPos 必须,要提取字符串的起始位置,必须为数值,
-	* 如果参数startPos是负数，从字符串的尾部开始算起的位置
-	* 如果startPos为负数且绝对值大于字符串长度，startPos为0
+	* 如果参数startPos是负数,从字符串的尾部开始算起的位置
+	* 如果startPos为负数且绝对值大于字符串长度,startPos为0
 	* length 可选 提取字符串的长度,若省略,提取startPos到字符对象的结尾
 
 
 ## Math 对象
-Math 对象是一个`固有的对象`，无需创建它,
+Math 对象是一个`固有的对象`,无需创建它,
 
 直接把 Math 作为对象使用就可以调用其所有属性和方法
 
 * `Math.ceil(x)` 对一个数进行向上取整
-	* 返回的是大于或等于x，并且与x最接近的整数
+	* 返回的是大于或等于x,并且与x最接近的整数
 
 * `Math.floor(x)` 对一个数进行向下取整
-	* 返回的是小于或等于x，并且与 x 最接近的整数
+	* 返回的是小于或等于x,并且与 x 最接近的整数
 
 * `Math.round(x)` 把一个数字四舍五入为最接近的整数
 	* 返回与 x 最接近的整数
-	* 对于 0.5，该方法将进行上舍入。(5.5 将舍入为 6)
-	* 如果 x 与两侧整数同等接近，则结果接近 +∞方向的数字值(如 -5.5 将舍入为 -5; -5.52 将舍入为 -6)
+	* 对于 0.5,该方法将进行上舍入。(5.5 将舍入为 6)
+	* 如果 x 与两侧整数同等接近,则结果接近 +∞方向的数字值(如 -5.5 将舍入为 -5; -5.52 将舍入为 -6)
 
 * `Math.random()` 随机数
 	* 返回一个大于或等于 0 但小于 1 的符号为正的数字值
@@ -251,7 +251,75 @@ Math 对象是一个`固有的对象`，无需创建它,
 	* `var  数组名= new Array();`
 * 定义时指定有n个空元素的数组：
 	* `var 数组名 =new Array(n);`
-* 定义数组的时候，直接初始化数据：
+* 定义数组的时候,直接初始化数据：
 	* `var  数组名 = [<元素1>, <元素2>, <元素3>...];`
 
 ![](http://oi2atwmcz.bkt.clouddn.com/array.jpg)
+
+* `arrayObject.join(分隔符)` 指定分隔符连接数组元素
+* `arrayObject.reverse()` 颠倒数组中元素的顺序
+* `arrayObject.slice(start,end)` 从已有的数组中返回选定的元素
+* `arrayObject.sort(方法函数)` 使数组中的元素按照一定的顺序排列
+	* 如果不指定<方法函数>,则按unicode码顺序排列
+	* 如果指定<方法函数>,则按<方法函数>所指定的排序方法排序
+
+
+# window 对象
+
+`window对象是BOM的核心,window对象指当前的浏览器窗口`
+![](http://oi2atwmcz.bkt.clouddn.com/bom.jpg)
+
+* 计时器
+	* `setTimeout()` 指定的延迟时间之后执行代码
+		* `setTimeout(函数/代码,延迟时间)`
+	* `clearTimeout()` 取消setTimeout()设置
+		* `clearTimeout(id_of_setTimeout)` id_of_setTimeout：由 setTimeout() 返回的 ID 值
+
+	* `setInterval()` 每隔指定的时间执行代码
+		* `setInterval(函数/代码,交互时间)` 以毫秒计（1s=1000ms）
+	* `clearInterval()` 取消setInterval()设置
+		* clearInterval(id_of_setInterval) id_of_setInterval：由 setInterval() 返回的 ID 值
+
+# History 对象
+history对象记录了用户曾经浏览过的页面(URL),并可以实现浏览器前进与后退相似导航的功能
+
+* window.history.[属性|方法]
+	* History `对象属性`:
+		* 如 var HL = window.history.length;
+	* History `对象方法`:
+		* `back()` 加载history列表中的前一个URL
+			* 如 window.history.back();
+		* `forward()` 加载history列表中的下一个URL
+			* window.history.forward();
+		* `go()` 加载history列表中的某个具体的页面
+			* window.history.go(-1);
+
+# Location对象
+location用于获取或设置窗体的URL,并且可以用于解析URL
+
+![](http://oi2atwmcz.bkt.clouddn.com/location.jpg)
+
+* location.[属性|方法]
+	* location 对象属性：
+	![对象属性](http://oi2atwmcz.bkt.clouddn.com/location%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7.jpg)
+	* location 对象方法：
+	![对象属性](http://oi2atwmcz.bkt.clouddn.com/location%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95.jpg)
+
+
+# Navigator对象
+Navigator 对象包含有关浏览器的信息,通常用于检测浏览器与操作系统的版本
+* 对象属性:
+
+![](http://oi2atwmcz.bkt.clouddn.com/navigator.jpg)
+
+	* navigator.userAgent 返回用户代理头的字符串表示(就是包括浏览器版本信息等的字符串)
+		* ![](http://oi2atwmcz.bkt.clouddn.com/useragent.jpg)
+
+# screen对象
+* `window.screen.属性` 获取用户的屏幕信息
+
+![](http://oi2atwmcz.bkt.clouddn.com/screen.jpg)
+
+* screen.height 返回屏幕分辨率的高
+* screen.width 返回屏幕分辨率的宽
+注:单位以像素计window.screen 对象在编写时可以不使用 window 这个前缀。
