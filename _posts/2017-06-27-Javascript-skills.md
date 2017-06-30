@@ -376,7 +376,7 @@ DOM节点层次图
 
 ### DOM操作:
 
-文档对象模型DOM 定义访问和处理HTML文档的标准方法。DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）
+文档对象模型DOM 定义访问和处理HTML文档的标准方法 DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）
 
 
 | 方法           | 说明           |
@@ -389,6 +389,50 @@ DOM节点层次图
 | replaceChild() | 把一个给定父元素里的一个子节点替换为另外一个节点 |
 
 
-1. `document.getElementsByName(name)` 返回带有指定名称的节点对象的集合
+1. `document.getElementById(id)` 通过指定id获得元素(获得一个)
 
-2. `document.getElementsByTagName(Tagname)` 返回带有指定标签名的节点对象的集合。返回元素的顺序是它们在文档中的顺序。
+2. `document.getElementsByName(name)` 返回带有指定名称的节点对象的集合
+
+3. `document.getElementsByTagName(Tagname)` 返回带有指定标签名的节点对象的集合 返回元素的顺序是它们在文档中的顺序
+
+4. `elementNode.getAttribute(name)` 通过元素节点的属性名称获取属性的值
+	* elementNode：使用getElementById()、getElementsByTagName()等方法,获取到的元素节点
+	* name：要想查询的元素节点的属性名字
+
+5. `elementNode.setAttribute(name,value)` 增加一个指定名称和值的新属性,或者把一个现有的属性设定为指定的值
+	* name: 要设置的属性名
+	* value: 要设置的属性值
+
+
+### 节点属性
+在文档对象模型 (DOM) 中，每个节点都是一个对象。DOM 节点有三个重要的属性:
+
+* nodeName:节点的名称,是只读的
+	* 元素节点的 nodeName 与标签名相同
+	* 属性节点的 nodeName 是属性的名称
+	* 文本节点的 nodeName 永远是 #text
+	* 文档节点的 nodeName 永远是 #document
+
+* nodeValue:节点的值
+	* 元素节点的 nodeValue 是 undefined 或 null
+	* 文本节点的 nodeValue 是文本自身
+	* 属性节点的 nodeValue 是属性的值
+
+* nodeType:节点的类型
+
+| 元素类型         | 节点类型         |
+| ------------- |:-------------:|
+| 元素      | 1  |
+| 属性       | 2 |
+| 文本       | 3|
+| 注释      | 8|
+| 文档     | 9 |
+
+```javascript
+var node=document.getElementsByTagName("li");
+for(var i=0;i<=node.length;i++){
+    document.write("节点名称"+ node[i].nodeName+"<br>");
+    document.write("节点的值"+node[i].nodeValue+"<br>");
+    document.write("节点的类型"+node[i].nodeType+"<br>");
+}
+```
