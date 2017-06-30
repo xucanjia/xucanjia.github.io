@@ -405,7 +405,7 @@ DOM节点层次图
 
 
 ### 节点属性
-在文档对象模型 (DOM) 中，每个节点都是一个对象。DOM 节点有三个重要的属性:
+在文档对象模型 (DOM) 中, 每个节点都是一个对象。DOM 节点有三个重要的属性:
 
 * nodeName:节点的名称,是只读的
 	* 元素节点的 nodeName 与标签名相同
@@ -430,9 +430,12 @@ DOM节点层次图
 
 ```javascript
 var node=document.getElementsByTagName("li");
-for(var i=0;i<=node.length;i++){
+for(var i=0;i<node.length;i++){
     document.write("节点名称"+ node[i].nodeName+"<br>");
     document.write("节点的值"+node[i].nodeValue+"<br>");
     document.write("节点的类型"+node[i].nodeType+"<br>");
 }
 ```
+* `elementNode.childNodes` 访问选定元素节点下的所有子节点的列表, 返回的值可以看作是一个数组,具有length属性
+
+如果选定的节点没有子节点, 则该属性返回不包含节点的 NodeList
