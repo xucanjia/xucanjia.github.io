@@ -90,7 +90,7 @@ title: Windows Server 搭建 git服务器
 * 把 `localclone.groovy` 复制另存为 `autotest.troovy`
 * 修改 `autotest.troovy` 中的
 
-```bash
+```javascript
 def rootFolder = 'c:/test'
 #修改为
 def rootFolder = 'C:/phpStudy/WWW/test'
