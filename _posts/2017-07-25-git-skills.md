@@ -82,20 +82,21 @@ title: Windows Server 搭建 git服务器
 
 假设创建tdatda版本库
 
-	* ![](http://oi2atwmcz.bkt.clouddn.com/girpro.png)
-	* 这时候,版本库已经创建好了,可到 存储项目代码的文件夹查看,这里为C:\GitProject
-	* `这时候还没有项目的文件`,需要自动部署文件,需要`指定一个文件夹`
-	* gitblit 所有hook(钩子)都放在这个目录 C:\gitblit\data\groovy (看你gitblit放在哪)
-	* 把localclone.groovy复制另存为 autotest.troovy
-	* 修改autotest.troovy中的
-	```bash
-		def rootFolder = 'c:/test'
-		#修改为
-		def rootFolder = 'C:/phpStudy/WWW/test' `这里用的是phpstudy,所以就放在WWW目录中,这里是测试我又新建了test目录`
-	```
-	rootFolder：自动部署  根目录
+* ![](http://oi2atwmcz.bkt.clouddn.com/girpro.png)
+* 这时候,版本库已经创建好了,可到 存储项目代码的文件夹查看,这里为C:\GitProject
+* `这时候还没有项目的文件`,需要自动部署文件,需要`指定一个文件夹`
+* gitblit 所有hook(钩子)都放在这个目录 C:\gitblit\data\groovy (看你gitblit放在哪)
+* 把localclone.groovy复制另存为 autotest.troovy
+* 修改autotest.troovy中的
 
-	![](http://oi2atwmcz.bkt.clouddn.com/gitfloder.png)
+```bash
+	def rootFolder = 'c:/test'
+	#修改为
+	def rootFolder = 'C:/phpStudy/WWW/test' `这里用的是phpstudy,所以就放在WWW目录中,这里是测试我又新建了test目录`
+```
+rootFolder：自动部署  根目录
+
+![](http://oi2atwmcz.bkt.clouddn.com/gitfloder.png)
 
 ### 编辑配置版本库,比如:已经创建了 `tdatda`
 1.版本库
