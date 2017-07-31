@@ -59,7 +59,7 @@ title: Windows Server 搭建 git服务器
 * 设置 SET CD=C:\Program Files\gitblit-1.8.0, 值为gitblit的路径
 * 将启动参数设为空值, 采用默认的参数即可 , --StartParams="" ^
 * 确保开启启动,在进入`服务`中,查看gitblit是否为自动模式
-*![](http://oi2atwmcz.bkt.clouddn.com/gitset.png)
+* ![](http://oi2atwmcz.bkt.clouddn.com/gitset.png)
 
 
 
@@ -68,6 +68,7 @@ title: Windows Server 搭建 git服务器
 * 浏览器会禁用Javascript脚本运行,请在Internet属性中->安全->自定义级别->脚本->启用 `java小程序脚本` 和 `活动脚本`
 * 添加几个用户或者团队,根据项目开发人员而定
 ### 创建版本库
+
 	* ![](http://oi2atwmcz.bkt.clouddn.com/girpro.png)
 	* 这时候,版本库已经创建好了,可到 存储项目代码的文件夹查看,这里为C:\GitProject
 	* `这时候还没有项目的文件`,需要自动部署文件,需要`指定一个文件夹`
@@ -82,10 +83,12 @@ title: Windows Server 搭建 git服务器
 	rootFolder：自动部署  根目录
 
 	![](http://oi2atwmcz.bkt.clouddn.com/gitfloder.png)
-### 编辑配置版本库比如已经创建了tdatda
+
+### 编辑配置版本库,比如:已经创建了 `tdatda`
 1.版本库
 
-![](http://oi2atwmcz.bkt.clouddn.com/banbenku.png)
+![](http://oi2atwmcz.bkt.clouddn.com/ddd.png)
+
 2.点击 编辑 找到刚刚的 hook   保存
 
 ![](http://oi2atwmcz.bkt.clouddn.com/gitedit.png)
