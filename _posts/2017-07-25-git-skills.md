@@ -18,8 +18,11 @@ title: Windows Server 搭建 git服务器
 # 2.安装及配置
 
 ### 安装Java环境及配置
+
 1.安装JRE和JDK,可更改自己想要安装的目录,但是记得保存在同一个目录之下
+
 ![](http://oi2atwmcz.bkt.clouddn.com/javashow.png)
+
 2.配置Java环境变量:
 * 右键” 计算机” => ”属性” => ”高级系统设置” => ”高级” => “环境变量” => `“系统变量”`。
 * 新建: 变量名: JAVA_HOME；变量值: C:\Program Files\Java\`jdk1.8.0_144`
@@ -56,34 +59,36 @@ title: Windows Server 搭建 git服务器
 * 设置 SET CD=C:\Program Files\gitblit-1.8.0, 值为gitblit的路径
 * 将启动参数设为空值, 采用默认的参数即可 , --StartParams="" ^
 * 确保开启启动,在进入`服务`中,查看gitblit是否为自动模式
-![](http://oi2atwmcz.bkt.clouddn.com/gitset.png)
+*![](http://oi2atwmcz.bkt.clouddn.com/gitset.png)
 
 
 
 # 3.glitblit的使用
-	### 在浏览器中输入: http://172.*.*.*:10101/ ,默认可以用admin和admin进行登录, 然后改密即可。
-	* 浏览器会禁用Javascript脚本运行,请在Internet属性中->安全->自定义级别->脚本->启用 `java小程序脚本` 和 `活动脚本`
-	* 添加几个用户或者团队,根据项目开发人员而定
-	### 创建版本库
-		* ![](http://oi2atwmcz.bkt.clouddn.com/girpro.png)
-		* 这时候,版本库已经创建好了,可到 存储项目代码的文件夹查看,这里为C:\GitProject
-		* `这时候还没有项目的文件`,需要自动部署文件,需要`指定一个文件夹`
-		* gitblit 所有hook(钩子)都放在这个目录 C:\gitblit\data\groovy (看你gitblit放在哪)
-		* 把localclone.groovy复制另存为 autotest.troovy
-		* 修改autotest.troovy中的
-		```bash
-			def rootFolder = 'c:/test'
-			#修改为
-			def rootFolder = 'C:/phpStudy/WWW/test' `这里用的是phpstudy,所以就放在WWW目录中,这里是测试我又新建了test目录`
-		```
-		rootFolder：自动部署  根目录
+### 在浏览器中输入: http://172.*.*.*:10101/ ,默认可以用admin和admin进行登录, 然后改密即可。
+* 浏览器会禁用Javascript脚本运行,请在Internet属性中->安全->自定义级别->脚本->启用 `java小程序脚本` 和 `活动脚本`
+* 添加几个用户或者团队,根据项目开发人员而定
+### 创建版本库
+	* ![](http://oi2atwmcz.bkt.clouddn.com/girpro.png)
+	* 这时候,版本库已经创建好了,可到 存储项目代码的文件夹查看,这里为C:\GitProject
+	* `这时候还没有项目的文件`,需要自动部署文件,需要`指定一个文件夹`
+	* gitblit 所有hook(钩子)都放在这个目录 C:\gitblit\data\groovy (看你gitblit放在哪)
+	* 把localclone.groovy复制另存为 autotest.troovy
+	* 修改autotest.troovy中的
+	```bash
+		def rootFolder = 'c:/test'
+		#修改为
+		def rootFolder = 'C:/phpStudy/WWW/test' `这里用的是phpstudy,所以就放在WWW目录中,这里是测试我又新建了test目录`
+	```
+	rootFolder：自动部署  根目录
 
-		![](http://oi2atwmcz.bkt.clouddn.com/gitfloder.png)
-	### 编辑配置版本库比如已经创建了tdatda
-	1.版本库
-	![](http://oi2atwmcz.bkt.clouddn.com/banbenku.png)
-	2.点击 编辑 找到刚刚的 hook   保存
-	![](http://oi2atwmcz.bkt.clouddn.com/gitedit.png)
+	![](http://oi2atwmcz.bkt.clouddn.com/gitfloder.png)
+### 编辑配置版本库比如已经创建了tdatda
+1.版本库
+
+![](http://oi2atwmcz.bkt.clouddn.com/banbenku.png)
+2.点击 编辑 找到刚刚的 hook   保存
+
+![](http://oi2atwmcz.bkt.clouddn.com/gitedit.png)
 
 
 
