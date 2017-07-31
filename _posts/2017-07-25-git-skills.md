@@ -118,7 +118,7 @@ http://`39.39.*.*:10101`  红色部分为服务器地址
 
 3.版本库
 
-![](http://oi2atwmcz.bkt.clouddn.com/ssss.png)
+![](http://oi2atwmcz.bkt.clouddn.com/ssdf.png)
 
 `复制为SourceTree克隆准备的URL`
 
