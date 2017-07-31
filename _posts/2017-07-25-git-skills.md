@@ -17,46 +17,46 @@ title: Windows Server 搭建 git服务器
 
 # 2.安装及配置
 
- 	### 安装Java环境及配置
- 	1.安装JRE和JDK,可更改自己想要安装的目录,但是记得保存在同一个目录之下
-		![](http://oi2atwmcz.bkt.clouddn.com/javashow.png)
- 	2.配置Java环境变量:
-	* 右键” 计算机” => ”属性” => ”高级系统设置” => ”高级” => “环境变量” => `“系统变量”`。
-	* 新建: 变量名: JAVA_HOME；变量值: C:\Program Files\Java\`jdk1.8.0_144`
-		* `注意`: 变量值是 JDK的目录
-	* 新建: 变量名: CLASSPATH；变量值: `%JAVA_HOME%/lib/dt.jar;%JAVA_HOME%/lib/tools.jar`
-	* 添加: 找到PATH变量, 选择编辑。把 `%JAVA_HOME%/bin;%JAVA_HOME%/jre/bin` 添加到”变量值”的结尾处。
+### 安装Java环境及配置
+1.安装JRE和JDK,可更改自己想要安装的目录,但是记得保存在同一个目录之下
+![](http://oi2atwmcz.bkt.clouddn.com/javashow.png)
+2.配置Java环境变量:
+* 右键” 计算机” => ”属性” => ”高级系统设置” => ”高级” => “环境变量” => `“系统变量”`。
+* 新建: 变量名: JAVA_HOME；变量值: C:\Program Files\Java\`jdk1.8.0_144`
+* `注意`: 变量值是 JDK的目录
+* 新建: 变量名: CLASSPATH；变量值: `%JAVA_HOME%/lib/dt.jar;%JAVA_HOME%/lib/tools.jar`
+* 添加: 找到PATH变量, 选择编辑。把 `%JAVA_HOME%/bin;%JAVA_HOME%/jre/bin` 添加到”变量值”的结尾处。
 
-	3.验证是否安装成功
-	* 命令行输入 javac 若出现下图则代表安装成功
+3.验证是否安装成功
+* 命令行输入 javac 若出现下图则代表安装成功
 
-		* ![](http://oi2atwmcz.bkt.clouddn.com/javasuccess.png)
+* ![](http://oi2atwmcz.bkt.clouddn.com/javasuccess.png)
 
-	* 提示不是内部或者外部命令,原因可能是`Java环境变量配置出错`,或者 `没有安装 JDK`
+* 提示不是内部或者外部命令,原因可能是`Java环境变量配置出错`,或者 `没有安装 JDK`
 
 
-	### 安装Gitblit
-	1.无需安装,解压Gitblit到你想放置的位置
-	2.创建用于存储项目代码的文件夹。这里为C:\GitProject
-	3.配置Gitblit:
-		* Gitblit目录下,进入 data 找到 `defaults.properties`
-		* git.repositoriesFolder(资料库路径), 赋值为C:/GitProject/ 注意:这里是 `/` 而不是 `\`
-		* 找到 `server.httpPort`, 设定http协议的端口号,改为 server.httpPort = 10101 (端口号自定)
-		* 找到 `server.httpBindInterface`, 设定`服务器的IP地址`。这里就设定你的`服务器IP`,注意是`电脑IP地址`
-		* 找到`server.httpsBindInterface`, 设定为localhost
-		* 找到`server.shutdownPort` , 其默认值为 8081, 是否被占用, 如果占用请修改
-	4.Gitblit目录下 管理员身份运行 `gitblit.cmd`,若出现下图,则代表成功
+### 安装Gitblit
+1.无需安装,解压Gitblit到你想放置的位置
+2.创建用于存储项目代码的文件夹。这里为C:\GitProject
+3.配置Gitblit:
+* Gitblit目录下,进入 data 找到 `defaults.properties`
+* git.repositoriesFolder(资料库路径), 赋值为C:/GitProject/ 注意:这里是 `/` 而不是 `\`
+* 找到 `server.httpPort`, 设定http协议的端口号,改为 server.httpPort = 10101 (端口号自定)
+* 找到 `server.httpBindInterface`, 设定`服务器的IP地址`。这里就设定你的`服务器IP`,注意是`电脑IP地址`
+* 找到`server.httpsBindInterface`, 设定为localhost
+* 找到`server.shutdownPort` , 其默认值为 8081, 是否被占用, 如果占用请修改
+4.Gitblit目录下 管理员身份运行 `gitblit.cmd`,若出现下图,则代表成功
 
-	![](http://oi2atwmcz.bkt.clouddn.com/gitsuccess.png)
+![](http://oi2atwmcz.bkt.clouddn.com/gitsuccess.png)
 
-	* 若失败,则检查配置是否配置正确,尤其服务器的IP地址,注意是`电脑IP地址`,命令行中输入 ipconfig 可看见
-	5.设置开机启动
-	* 打开installService.md
-		* 设置 SET ARCH=amd64（64位, 32位机器为 x86）
-		* 设置 SET CD=C:\Program Files\gitblit-1.8.0, 值为gitblit的路径
-		* 将启动参数设为空值, 采用默认的参数即可 , --StartParams="" ^
-		* 确保开启启动,在进入`服务`中,查看gitblit是否为自动模式
-		![](http://oi2atwmcz.bkt.clouddn.com/gitset.png)
+* 若失败,则检查配置是否配置正确,尤其服务器的IP地址,注意是`电脑IP地址`,命令行中输入 ipconfig 可看见
+5.设置开机启动
+* 打开installService.md
+* 设置 SET ARCH=amd64（64位, 32位机器为 x86）
+* 设置 SET CD=C:\Program Files\gitblit-1.8.0, 值为gitblit的路径
+* 将启动参数设为空值, 采用默认的参数即可 , --StartParams="" ^
+* 确保开启启动,在进入`服务`中,查看gitblit是否为自动模式
+![](http://oi2atwmcz.bkt.clouddn.com/gitset.png)
 
 
 
