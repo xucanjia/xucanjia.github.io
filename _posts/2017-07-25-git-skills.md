@@ -14,6 +14,7 @@ title: Windows Server 搭建 git服务器
 
  * `下载Gitblit:` <http://www.gitblit.com/>  下载Windows版
 
+
 # 2.安装及配置
 
  	### 安装Java环境及配置
@@ -56,6 +57,9 @@ title: Windows Server 搭建 git服务器
 		* 将启动参数设为空值, 采用默认的参数即可 , --StartParams="" ^
 		* 确保开启启动,在进入`服务`中,查看gitblit是否为自动模式
 		![](http://oi2atwmcz.bkt.clouddn.com/gitset.png)
+
+
+
 # 3.glitblit的使用
 	### 在浏览器中输入: http://172.*.*.*:10101/ ,默认可以用admin和admin进行登录, 然后改密即可。
 	* 浏览器会禁用Javascript脚本运行,请在Internet属性中->安全->自定义级别->脚本->启用 `java小程序脚本` 和 `活动脚本`
@@ -86,16 +90,22 @@ title: Windows Server 搭建 git服务器
 # 4.Coding...
 
 1.首先,访问gitblit服务器
+
 http://`39.39.*.*:10101`  红色部分为服务器地址
+
 2.用账号登录(就是gitblit中注册的用户)
+
 3.版本库
 
-![](http://oi2atwmcz.bkt.clouddn.com/gtiproject.png)
+![](http://oi2atwmcz.bkt.clouddn.com/ssss.png)
 
 `复制为SourceTree克隆准备的URL`
 
-5.在本地SourceTree客户端 新建仓库->从URL克隆
-粘贴 http://zao@39.**8.**6.128:10101/r/tdatda.git
+4.在本地SourceTree客户端
+
+新建仓库->从URL克隆
+
+粘贴 http://zao@39.xx8.xx6.128:10101/r/tdatda.git
 
 注意:`这里是你服务器的地址`,端口记得防火墙入站规则要开
 
@@ -112,6 +122,7 @@ http://`39.39.*.*:10101`  红色部分为服务器地址
 gitblit服务器端中  我们设置的hook 会自动部署文件
 
 我的是在`C:/phpStudy/WWW/test`
+
 ![](http://oi2atwmcz.bkt.clouddn.com/tdatad.png)
 
 
