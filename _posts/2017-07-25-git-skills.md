@@ -10,8 +10,7 @@ title: Windows Server 搭建 git服务器
 
 # 1.准备工作
  * `下载Java运行环境:` <http://www.java.com/zh_CN/>  注意自己的服务器32位还是64位
- 	*下载内容: `JRE` 和 `JDK`
-
+ 	* 下载内容: `JRE` 和 `JDK`
  * `下载Gitblit:` <http://www.gitblit.com/>  下载Windows版
 
 
