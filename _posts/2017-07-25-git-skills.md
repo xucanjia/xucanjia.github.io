@@ -25,10 +25,15 @@ title: Windows Server 搭建 git服务器
 
 2.配置Java环境变量:
 * 右键” 计算机” => ”属性” => ”高级系统设置” => ”高级” => “环境变量” => `“系统变量”`。
-* 新建: 变量名: JAVA_HOME；变量值: C:\Program Files\Java\`jdk1.8.0_144`
+
+* 新建: 变量名: JAVA_HOME；变量值: `C:\Program Files\Java\jdk1.8.0_144`
+
 * `注意`: 变量值是 JDK的目录
+
 * 新建: 变量名: CLASSPATH；变量值: `%JAVA_HOME%/lib/dt.jar;%JAVA_HOME%/lib/tools.jar`
+
 * 添加: 找到PATH变量, 选择编辑。把 `%JAVA_HOME%/bin;%JAVA_HOME%/jre/bin` 添加到”变量值”的结尾处。
+
 
 3.验证是否安装成功
 * 命令行输入 javac 若出现下图则代表安装成功
@@ -40,20 +45,26 @@ title: Windows Server 搭建 git服务器
 
 ### 安装Gitblit
 1.无需安装,解压Gitblit到你想放置的位置
+
 2.创建用于存储项目代码的文件夹。这里为C:\GitProject
+
 3.配置Gitblit:
+
 * Gitblit目录下,进入 data 找到 `defaults.properties`
 * git.repositoriesFolder(资料库路径), 赋值为C:/GitProject/ 注意:这里是 `/` 而不是 `\`
 * 找到 `server.httpPort`, 设定http协议的端口号,改为 server.httpPort = 10101 (端口号自定)
 * 找到 `server.httpBindInterface`, 设定`服务器的IP地址`。这里就设定你的`服务器IP`,注意是`电脑IP地址`
 * 找到`server.httpsBindInterface`, 设定为localhost
 * 找到`server.shutdownPort` , 其默认值为 8081, 是否被占用, 如果占用请修改
+
 4.Gitblit目录下 管理员身份运行 `gitblit.cmd`,若出现下图,则代表成功
 
 ![](http://oi2atwmcz.bkt.clouddn.com/gitsuccess.png)
 
 * 若失败,则检查配置是否配置正确,尤其服务器的IP地址,注意是`电脑IP地址`,命令行中输入 ipconfig 可看见
+
 5.设置开机启动
+
 * 打开installService.md
 * 设置 SET ARCH=amd64（64位, 32位机器为 x86）
 * 设置 SET CD=C:\Program Files\gitblit-1.8.0, 值为gitblit的路径
@@ -68,6 +79,8 @@ title: Windows Server 搭建 git服务器
 * 浏览器会禁用Javascript脚本运行,请在Internet属性中->安全->自定义级别->脚本->启用 `java小程序脚本` 和 `活动脚本`
 * 添加几个用户或者团队,根据项目开发人员而定
 ### 创建版本库
+
+假设创建tdatda版本库
 
 	* ![](http://oi2atwmcz.bkt.clouddn.com/girpro.png)
 	* 这时候,版本库已经创建好了,可到 存储项目代码的文件夹查看,这里为C:\GitProject
