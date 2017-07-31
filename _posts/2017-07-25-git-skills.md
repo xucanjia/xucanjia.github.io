@@ -14,7 +14,7 @@ title: Windows Server 搭建 git服务器
 
  * `下载Gitblit:` <http://www.gitblit.com/>  下载Windows版
 
- # 2.安装及配置
+# 2.安装及配置
 
  	### 安装Java环境及配置
  	1.安装JRE和JDK,可更改自己想要安装的目录,但是记得保存在同一个目录之下
