@@ -14,5 +14,5 @@ exclude:
   - Gemfile.lock
   - '/README.md'
   - '*.sass'
-# github:
-#   repositoryName: '/'
+github:
+  repositoryName: '/'
