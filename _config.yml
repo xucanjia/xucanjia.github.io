@@ -5,16 +5,7 @@ permalink: /:year/:month/:day/:title.html
 auto: true
 paginate: 6
 paginate_path: page/:num
-twitter_username: simplgy
-github_username:  simplgy
-permalink: /:title/
-gems:
-  - jekyll-feed
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - '/README.md'
-  - '*.sass'
+
 blog:
     name: Canjia                                         # 博客名称
     description: 一起都会好起来.                           # 博客描述
