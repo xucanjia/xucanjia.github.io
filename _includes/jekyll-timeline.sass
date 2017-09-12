@@ -1,0 +1,225 @@
+// Useful utilities
+$sizePhone: 603px
+$sizeTablet: 1024px
+@mixin phone
+  @media (max-width: $sizePhone)
+    @content
+
+// Blacks and Shades
+$black02:  mix( black, white, 02% )
+$shade02:       rgba( black, .02 )
+$black05:  mix( black, white, 05% )
+$shade05:       rgba( black, .05 )
+$black10:  mix( black, white, 10% )
+$shade10:       rgba( black, .10 )
+$black15:  mix( black, white, 15% )
+$shade15:       rgba( black, .15 )
+$black20:  mix( black, white, 20% )
+$shade20:       rgba( black, .20 )
+$black50:  mix( black, white, 50% )
+$shade50:       rgba( black, .50 )
+$black60:  mix( black, white, 60% )
+$shade60:       rgba( black, .60 )
+$black70:  mix( black, white, 70% )
+$shade70:       rgba( black, .70 )
+$black85:  mix( black, white, 85% )
+$shade85:       rgba( black, .85 )
+
+// Whites & Lights
+$white20:  mix( white, black, 20% )
+$light20:       rgba( white, .20)
+
+// Colors
+/* Coolors Exported Palette - coolors.co/9dd7f9-c0e589-f2e480-ffcfa0-e1d0ef */
+$color1: rgba(157, 215, 249, 1)
+$color2: rgba(192, 229, 137, 1)
+$color3: rgba(242, 228, 128, 1)
+$color4: rgba(255, 207, 160, 1)
+$color5: rgba(225, 208, 239, 1)
+
+// Color Manipulations
+// a is the base color, b is a lighter version
+
+// Semantic Colors
+$muted: $black70
+$semiMuted: $black50
+$darkText: $black85
+
+// "Reset"
+.jekyllTimeline
+  ol
+    list-style: none
+  p
+    margin: 0
+
+
+.jekyllTimeline
+  background: white
+  box-sizing: border-box
+  padding: 20px
+  padding-top: 40px
+  padding-left: 40px
+  overflow: hidden
+
+  +phone
+    padding: 10px
+    padding-top: 40px
+    padding-left: 20px
+
+
+
+.jekyllTimeline .inner
+  $fontHuge: 60px
+  $fontLarge: 17px
+  $fontNormal: 14px
+  $fontTiny: 12px
+  $lineHeight: 1.4
+  font-size: $fontNormal
+  line-height: $lineHeight
+  position: relative
+  display: flex
+  padding-left: 5px
+
+  *
+    -webkit-print-color-adjust: exact
+
+  // Timeline year indication lines
+  b
+    position: absolute
+    width: 100%
+    left: 0
+    box-sizing: border-box
+    border-bottom: 1px solid $black15 // border prints better than box shadow
+
+  b label
+    position: absolute
+    top: 50%
+    margin-top: -10px
+    height: 20px
+    width: 50px
+    color: $muted
+    text-align: center
+    font-weight: normal
+    transform: rotateZ(270deg)
+    transition: all 0.15s ease-in-out
+    left: -45px
+    +phone
+      left: -35px
+
+  b:hover label
+    color: $semiMuted
+
+  b i
+    display: block
+    box-sizing: border-box
+  b i:nth-of-type(3n)
+    border-bottom: 1px solid $black05
+  b i:last-of-type
+    border: none
+  b i:hover
+    background-color: $shade02
+
+  .col
+    position: relative
+    flex: 1 1 50%
+    margin-right: 10px
+    pointer-events: none
+
+  .event
+    position: absolute
+    padding: 3px 10px
+    box-sizing: border-box
+    width: 100%
+    left: 0
+    overflow: hidden
+    border-radius: 2px
+    pointer-events: all // put back. Parent removed them so we can highlight the years
+    cursor: pointer
+    transition: all 0.15s ease-in-out
+    &:hover
+      box-shadow: inset 0 0 0 2px $shade10
+    // When you focus an event, bring it to the foreground
+    &:focus
+      box-shadow: inset 0 0 0 2px $shade10, 0 0 0 2px white, 1px 2px 10px 0 $shade15
+      z-index: 1
+      height: auto !important
+      left: 5px
+      outline: none
+
+  .colTitle
+    box-sizing: border-box
+    font-size: $fontLarge
+    position: absolute
+    padding: 0 10px
+    width: 100%
+    left: 0
+    top: -50px
+    height: 40px
+    line-height: 40px
+    span
+      display: inline-block
+      line-height: 1.1
+
+  // Colored Columns
+  .col1 .event
+    background-color: $color1
+    &:nth-child(odd)
+      background-color: mix($color1, white, 70%)
+  .col2 .event
+    background-color: $color2
+    &:nth-child(odd)
+      background-color: mix($color2, white, 70%)
+  .col3 .event
+    background-color: $color3
+    &:nth-child(odd)
+      background-color: mix($color3, white, 70%)
+  .col4 .event
+    background-color: $color4
+    &:nth-child(odd)
+      background-color: mix($color4, white, 70%)
+  .col5 .event
+    background-color: $color5
+    &:nth-child(odd)
+      background-color: mix($color5, white, 70%)
+
+  .col1 .colTitle
+    box-shadow: inset 0 -3px 0 0 $color1
+  .col2 .colTitle
+    box-shadow: inset 0 -3px 0 0 $color2
+  .col3 .colTitle
+    box-shadow: inset 0 -3px 0 0 $color3
+  .col4 .colTitle
+    box-shadow: inset 0 -3px 0 0 $color4
+  .col5 .colTitle
+    box-shadow: inset 0 -3px 0 0 $color5
+
+  // Event content
+  .event
+    .title
+      font-weight: 500
+    .description
+      font-size: $fontTiny
+      color: $shade60
+    code
+      background: $light20
+      border-color: $shade10
+    li
+      line-height: 1.3
+      margin-bottom: 5px
+    a
+      color: $darkText
+      text-decoration: underline
+
+// Fade to white at the end of the timeline
+.jekyllTimeline .innner:after
+  content: ""
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  height: 30px
+  background: linear-gradient(to bottom, transparent, white 65%) // Fade things off the bottom of the page if they overflow (eg: education)
+
+@media print
+  .jekyllTimeline b label
+    left: -35px

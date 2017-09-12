@@ -1,0 +1,15 @@
+---
+layout: base
+index: true
+---
+
+<ul class="timeline-examples">
+  {% for post in site.posts %}
+    <li class="post summary">
+      <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">
+        <!-- <p>{{ post.title }}</p> -->
+        <img src="{{ site.baseurl }}/screencaps{{ post.id }}.png" />
+      </a>
+    </li>
+  {% endfor %}
+</ul>
