@@ -15,4 +15,4 @@ exclude:
   - '/README.md'
   - '*.sass'
 # github:
-#   repositoryName: '/'
+  repositoryName: '/'
