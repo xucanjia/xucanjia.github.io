@@ -1,0 +1,27 @@
+baseurl: /
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title.html
+auto: true
+paginate: 6
+paginate_path: page/:num
+
+blog:
+    name: Canjia                                         # 博客名称
+    description: 一起都会好起来.                           # 博客描述
+    title:                                               # 网页标题
+    url: http://xucanjia.github.io                       # 博客地址
+    duoshuo: 2121108                                     # 多说ID
+    tongji:                                              # 百度统计ID
+    qiniu:                                               # 七牛云地址
+    bgmurl: http://ois5yh1xg.bkt.clouddn.com/%E5%8D%A2%E5%86%A0%E5%BB%B7%E4%B8%80%E7%94%9F%E6%89%80%E7%88%B1.mp3
+    bgurl: /res/music/任意门.mp3
+author:
+    name:                                                # 作者名称
+    email:                                               # 邮箱地址
+    weibo: http://weibo.com/xucanjia23                   # 微博地址
+    github: https://github.com/xucanjia
+    logo: /res/img/me.jpg                                # logo地址
+    douban:
+        name:                                            # 豆瓣地址名称
+        key:                                             # 豆瓣API Key
