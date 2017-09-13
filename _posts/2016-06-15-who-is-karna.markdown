@@ -14,7 +14,7 @@ Karna is one of the central characters in the Hindu epic Mahābhārata. Karna wa
 Karna was the son of Surya(Sun) and Kunti, born to Kunti before her marriage with Pandu.
 
 {% highlight php %}
-echo "asdhjkahdfhjkfhkjadfjkh";
+echo "asdhjkahdfhjkfhkjadfdfjkh";
 {% endhighlight %}
 ![Karna]({{site.baseurl}}/images/karna-2.jpg)
 
