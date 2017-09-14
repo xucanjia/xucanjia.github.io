@@ -39,6 +39,14 @@ author: webjeda
 </blockquote>
 {% endhighlight %}
 
+{% highlight PHP %}
+if(true){
+	echo true;
+}else{
+	echo false;
+}
+{% endhighlight %}
+
 
 ## Table
 
