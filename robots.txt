@@ -1,0 +1,3 @@
+User-Agent: *
+
+Sitemap: http://silverd.github.io/sitemap.txt
