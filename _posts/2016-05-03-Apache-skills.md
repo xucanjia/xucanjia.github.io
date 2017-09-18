@@ -4,17 +4,16 @@ category: ['Apache']
 title: Apache 安装配置
 ---
 
-## TODO
+## TODO(安装)
 
 ## 配置本地虚拟域名
 
-`分配几个域名`
-
+执行~
 ```bash
 subl /private/etc/hosts
 ```
--eg-
-
+`分配几个域名`
+```bash
 127.0.0.1	localhost
 
 127.0.0.1	bb.test
@@ -24,14 +23,14 @@ subl /private/etc/hosts
 127.0.0.1	cc.cn
 
 127.0.0.1	cc.test
-
+```
 
 ## 指向项目
-
+执行~
 ```bash
 subl /usr/local/etc/apache2/2.4/extra/httpd-vhosts.conf
 ```
-`增加`
+`底部增加`
 
 ```bash
 <VirtualHost *:80>
