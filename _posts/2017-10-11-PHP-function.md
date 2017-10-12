@@ -3,9 +3,11 @@ layout: post
 category: ['PHP']
 title: 非常有用的PHP函数
 ---
+收集整理的非常有用的PHP函数(转)
 ## 加密解密
 ```php
-function encryptDecrypt($key, $string, $decrypt){
+function encryptDecrypt($key, $string, $decrypt)
+{
     if($decrypt){
         $decrypted = rtrim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($key), base64_decode($string), MCRYPT_MODE_CBC, md5(md5($key))), "12");
         return $decrypted;
@@ -17,7 +19,8 @@ function encryptDecrypt($key, $string, $decrypt){
 ```
 ## 生成随机字符串
 ```php
-function generateRandomString($length = 10) {
+function generateRandomString($length = 10)
+{
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $randomString = '';
     for ($i = 0; $i < $length; $i++) {
@@ -29,14 +32,16 @@ function generateRandomString($length = 10) {
 
 ## 获取文件扩展名
 ```php
-function getExtension($filename){
+function getExtension($filename)
+{
   $myext = substr($filename, strrpos($filename, '.'));
   return str_replace('.','',$myext);
 }
 ```
 ## 获取文件大小并格式化
 ```php
-function formatSize($size) {
+function formatSize($size)
+{
     $sizes = array(" Bytes", " KB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB");
     if ($size == 0) {
 		return('n/a');
@@ -48,7 +53,8 @@ function formatSize($size) {
 
 ## PHP替换标签字符
 ```php
-function stringParser($string,$replacer){
+function stringParser($string,$replacer)
+{
     $result = str_replace(array_keys($replacer), array_values($replacer),$string);
     return $result;
 }
@@ -56,7 +62,8 @@ function stringParser($string,$replacer){
 
 ## 列出目录下的文件
 ```php
-function listDirFiles($DirPath){
+function listDirFiles($DirPath)
+{
     if($dir = opendir($DirPath)){
          while(($file = readdir($dir))!== false){
                 if(!is_dir($DirPath.$file))
@@ -70,7 +77,8 @@ function listDirFiles($DirPath){
 
 ## 获取当前页面的url
 ```php
-function curPageURL() {
+function curPageURL()
+{
 	$pageURL = 'http';
 	if (!empty($_SERVER['HTTPS'])) {$pageURL .= "s";}
 	$pageURL .= "://";
@@ -85,7 +93,8 @@ function curPageURL() {
 
 ## 强制下载
 ```php
-function download($filename){
+function download($filename)
+{
     if ((isset($filename))&&(file_exists($filename))){
        header("Content-length: ".filesize($filename));
        header('Content-Type: application/octet-stream');
@@ -105,7 +114,8 @@ function download($filename){
  编码默认为 utf-8
  开始长度默认为 0
 */
-function cutStr($string, $sublen, $start = 0, $code = 'UTF-8'){
+function cutStr($string, $sublen, $start = 0, $code = 'UTF-8')
+{
     if($code == 'UTF-8'){
         $pa = "/[\x01-\x7f]|[\xc2-\xdf][\x80-\xbf]|\xe0[\xa0-\xbf][\x80-\xbf]|[\xe1-\xef][\x80-\xbf][\x80-\xbf]|\xf0[\x90-\xbf][\x80-\xbf][\x80-\xbf]|[\xf1-\xf7][\x80-\xbf][\x80-\xbf][\x80-\xbf]/";
         preg_match_all($pa, $string, $t_string);
@@ -136,7 +146,8 @@ function cutStr($string, $sublen, $start = 0, $code = 'UTF-8'){
 
 ## 获取用户真实IP
 ```php
-function getIp() {
+function getIp()
+{
 	if (getenv("HTTP_CLIENT_IP") && strcasecmp(getenv("HTTP_CLIENT_IP"), "unknown"))
 		$ip = getenv("HTTP_CLIENT_IP");
 	else
@@ -156,7 +167,8 @@ function getIp() {
 
 ## 防止注入
 ```php
-function injCheck($sql_str) {
+function injCheck($sql_str)
+{
 	$check = preg_match('/select|insert|update|delete|\'|\/\*|\*|\.\.\/|\.\/|union|into|load_file|outfile/', $sql_str);
 	if ($check) {
 		echo '非法字符！！'.$sql_str;
@@ -169,7 +181,8 @@ function injCheck($sql_str) {
 
 ## 页面提示跳转
 ```php
-function message($msgTitle,$message,$jumpUrl){
+function message($msgTitle,$message,$jumpUrl)
+{
 	$str = '<!DOCTYPE HTML>';
 	$str .= '<html>';
 	$str .= '<head>';
@@ -196,7 +209,8 @@ function message($msgTitle,$message,$jumpUrl){
 
 ## 时间长度转换
 ```php
-function changeTimeType($seconds) {
+function changeTimeType($seconds)
+{
 	if ($seconds > 3600) {
 		$hours = intval($seconds / 3600);
 		$minutes = $seconds % 3600;
@@ -207,3 +221,5 @@ function changeTimeType($seconds) {
 	return $time;
 }
 ```
+
+转:<https://www.helloweba.com/view-blog-281.html#pageurl>
