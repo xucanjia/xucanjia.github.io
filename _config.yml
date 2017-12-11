@@ -8,7 +8,7 @@ paginate_path: page/:num
 
 blog:
     name: Canjia                                         # 博客名称
-    description: 一起都会好起来.                           # 博客描述
+    description: ..白云苍狗,既往不咎..                           # 博客描述
     title:                                               # 网页标题
     url: http://xucanjia.github.io                       # 博客地址
     duoshuo: 2121108                                     # 多说ID
