@@ -4,7 +4,7 @@ category: ['Python3']
 title: Python3相关命令
 ---
 ## pip
-```python
+```bash
 # 查看 pip 版本
 python3 -m pip -V
 
