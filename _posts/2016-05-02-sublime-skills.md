@@ -22,3 +22,15 @@ tools->build system->new bulid system
 直接运行当前xxx.php 文件  用快捷键 `ctrl+B` 可得结果
 
 
+# SFTP 注册码
+```zsh
+{  
+    "email": "xiaosong@xiaosong.me",  
+    "product_key": "d419f6-de89e9-0aae59-2acea1-07f92a"  
+}  
+-----------------------------------------------------------------------------------  
+// {  
+// "email":"Rimke@163.com",  
+// "product_key":"e83eda-38644b-43c828-e3669b-cd8a85",  
+// }  
+```
