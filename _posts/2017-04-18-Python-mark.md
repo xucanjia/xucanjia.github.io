@@ -1,6 +1,6 @@
 ---
 layout: post
-category: ['Python']
+category: ['Python3']
 title: Python3 笔记
 ---
 member = [1,2,3,4]
