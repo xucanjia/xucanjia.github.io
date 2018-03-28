@@ -3,6 +3,48 @@ layout: post
 category: ['sublime']
 title: 关于sublime text的一些整理
 ---
+# php 常用插件
+`SublimeLinter:` php代码检查
+
+配置php引擎检查
+```zsh
+    "paths": {
+        "linux": [],
+        "osx": [],
+        "windows": ["D:/phpstudy/PHPTutorial/php/php-7.0.12-nts"]
+    },
+```
+`All Autocomplete：`
+
+Sublime Text 默认的 Autocomplete 功能只考虑当前的文件，而 All Autocomplete 插件会搜索所有打开的文件来寻找匹配的提示词。
+
+`SublimeTmpl:`
+
+新建html、css、javascript、php、python、ruby六种类型的文件模板，所有的文件模板都在插件目录的templates文件夹里，可以自定义编辑文件模板。
+
+```zsh
+快捷键:
+ctrl+alt+h html
+ctrl+alt+j javascript
+ctrl+alt+c css
+ctrl+alt+p php
+```
+`SyncedSideBar：`
+
+每次打开文件，侧边栏都会同步显示该文件所在目录树中的位置
+
+
+`FileDiffs：`
+
+强大的比较代码不同工具。比较当前文件与选中的代码、剪切板中代码、另一文件、未保存文件之间的差别。可配置为显示差别在外部比较工具，精确到行。右键标签页，出现FileDiffs
+Menu或者Diff with Tab…选择对应文件比较即可
+
+`BracketHighlighter` 高亮显示匹配的括号、引号和标签
+
+`alignment :`自动对齐插件
+
+
+
 # 新建PHP编译系统
 `MAC`端
 
