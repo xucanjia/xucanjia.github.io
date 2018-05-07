@@ -5,6 +5,28 @@ title: 非常有用的PHP函数
 ---
 收集整理的非常有用的PHP函数
 ```php
+/*
+* 判断 $array中是否存在$value;
+
+function deep_in_array($value,$array){
+	foreach($array as $item){
+		if(!is_array($item)){
+			if ($item == $value){
+				return true;
+			}else{
+				continue;
+			}
+		}
+		if(in_array($value, $item)){
+			return true;
+		}else if(deep_in_array($value, $item)){
+			return true;
+		}
+	}
+	return false;
+}*/
+```
+```php
 //生成随机字符串
 function generate_password( $length = 8 ) {
 // 密码字符集，可任意添加你需要的字符
