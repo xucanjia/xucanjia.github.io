@@ -4,6 +4,36 @@ category: ['PHP']
 title: 非常有用的PHP函数
 ---
 收集整理的非常有用的PHP函数(转)
+```php
+//获取浏览器和设备
+function getAgentInfo(){
+    $arr = array();
+    $agent = $_SERVER['HTTP_USER_AGENT'];
+    $browser = array('MSIE','Firefox','QQBrowser','QQ/','UCBrowser','MicroMessenger','Edge','Chrome','Opera','OPR','Safari','Trident/');
+    $system = array('Windows Phone','Windows','Android','iPhone','iPad');
+    foreach($browser as $v){
+        if(stripos($agent,$v) !== false){
+            $arr['browser'] = $v;
+            break;
+        }
+    }
+    foreach($system as $v){
+        if(stripos($agent,$v)){
+            $arr['system'] = $v;
+            break;
+        }
+    }
+    return $arr;
+}
+ 
+//判断微信
+function is_weixin(){
+    if ( strpos($_SERVER['HTTP_USER_AGENT'], 'MicroMessenger') !== false ) {
+        return true;
+    }
+    return false;
+}
+```
 ## 加密解密
 ```php
 function encryptDecrypt($key, $string, $decrypt)
