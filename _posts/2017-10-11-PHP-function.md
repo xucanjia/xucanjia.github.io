@@ -5,6 +5,26 @@ title: 非常有用的PHP函数
 ---
 收集整理的非常有用的PHP函数(转)
 ```php
+/*
+* array unique_rand( int $min, int $max, int $num )
+* 生成一定数量的不重复随机数
+* $min 和 $max: 指定随机数的范围
+* $num: 指定生成数量
+*/
+
+function unique_rand($min=100000, $max=999999, $num=6000) {
+   $count = 0;
+   $return = array();
+   while ($count < $num) {
+       $return[] = mt_rand($min, $max);
+       $return = array_flip(array_flip($return));
+       $count = count($return);
+   }
+   shuffle($return);
+   return $return;
+}
+```
+```php
 //获取浏览器和设备
 function getAgentInfo(){
     $arr = array();
