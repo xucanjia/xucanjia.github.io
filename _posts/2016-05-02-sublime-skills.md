@@ -3,6 +3,27 @@ layout: post
 category: ['sublime']
 title: 关于sublime text的一些整理
 ---
+# 设置
+```zsh
+{
+    "color_scheme": "Packages/Theme - Aprosopo/Tomorrow-Night-Eighties-Stormy.tmTheme",
+    "font_face": "Consolas YaHei",
+    "scroll_past_end": true,
+    "font_size": 12,
+    "margin": 5,
+    "line_padding_top": 2, 
+    "line_padding_bottom": 1, 
+    "draw_centered": false,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "show_encoding": true,
+    "show_line_endings": true,
+    "theme": "Boxy Tomorrow.sublime-theme"
+}
+
+```
 # php 常用插件
 `SublimeLinter:` php代码检查
 
