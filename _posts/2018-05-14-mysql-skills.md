@@ -3,7 +3,7 @@ layout: post
 category: ['mysql']
 title: mysql相关
 ---
-#关于批量更新
+# 关于批量更新
 ### 批量修改某个字段,根据某个条件
 ```zsh
 UPDATE categories 
@@ -79,5 +79,5 @@ update mytable, tmptable set mytable.myfield = tmptable.myfield where mytable.i
 【临时表】方式需要用户有temporary 表的create 权限
 
  `数量较少时【replace into】和【insert into】性能最好，数量大时【临时表】最好, 【CASE】则具有通用型也不具结构隐患`
- 
+
  ------
