@@ -3,8 +3,9 @@ layout: post
 category: ['Thinkphp5']
 title: Thinkphp5 基础
 ---
-
-
+# 配置
+todo~~~
+---------------
 # 路由
 需要在配置文件 `根目录/conf/config.php中` `开启路由`（默认是开启）
 ```php
@@ -27,3 +28,4 @@ return [
 ];
 ```
 `同样的url()函数也会随之得到路由后的地址`
+--------------
