@@ -3,6 +3,7 @@ layout: post
 category: ['Thinkphp5']
 title: Thinkphp5 代码片段
 ---
+# 查 增 改
 ```php
     // 查
     public static function findByOrderno($orderno)
@@ -48,6 +49,7 @@ public static function add($data)
 {
 	return db('productgroup')->insert($data);
 }
+
 // 处理数据 并更新数据
 $data['post_time'] =strtotime($data['post_time']);
 $data['post_amount'] *=100;
@@ -59,6 +61,7 @@ return Db::name('orderkill')->where('orderno', $data['orderno'])->update($data);
 
 ```
 ----------
+# 列表常用
 ```html
 <!-- 列表页面常用 -->
 <td>{$list.price_old/100}</td>
@@ -114,4 +117,91 @@ return Db::name('orderkill')->where('orderno', $data['orderno'])->update($data);
 
     </div>
 </div>
+```
+-----------
+# ajax上传图片
+```php
+/**
+ * 上传
+ */
+public function upload_photo()
+{
+    $file = $this->request->file('file');
+    $uid = session('ydyl_weixin_user.id');
+    $path = ROOT_PATH . 'public' . DS . 'uploads/banner';
+    // if(empty($uid)){
+    //     return ['code'=>404,'msg'=>'用户未登录'];
+    // }
+            if(!empty($file)){
+                // 移动到框架应用根目录/public/uploads/ 目录下
+                $info = $file->validate(['size'=>1048576,'ext'=>'jpg,png,gif'])->rule('uniqid')->move($path);
+                $error = $file->getError();
+                //验证文件后缀后大小
+                if(!empty($error)){
+                    dump($error);exit;
+                }
+                if($info){
+                    // 成功上传后 获取上传信息
+                    // 输出 jpg
+                    $info->getExtension();
+                    // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
+                    $info->getSaveName();
+                    // 输出 42a79759f284b767dfcb2a0197904287.jpg
+                    $photo = $info->getFilename();
+
+                }else{
+                    // 上传失败获取错误信息
+                    $file->getError();
+                }
+            }else{
+                $photo = '';
+            }
+    if($photo !== ''){
+        return ['code'=>1,'msg'=>'成功','photo'=>'/uploads/banner/'.$photo];
+    }else{
+        return ['code'=>404,'msg'=>'失败'];
+    }
+}
+ 
+```
+```html
+<div class="col-sm-10 col-md-4">
+    <input class="form-control" value="{$list.url}"  type='hidden' name="url"
+           id="url" maxlength=""
+           placeholder="">
+   <!-- 上传图片 -->
+    <img class="imgurl" src="{$list.url}">
+    <div class="upload-btn">
+        <input type="file" name="pic1" id="pic" accept="image/gif,image/jpeg,image/x-png"/>
+    </div>                   
+</div>
+
+
+<script>
+    //上传图片
+    $('#pic').change(function(event) {
+        var formData = new FormData();
+        formData.append("file", $(this).get(0).files[0]);
+        $.ajax({
+            url:'__URL__//upload_photo',
+            type:'POST',
+            data:formData,
+            cache: false,
+            contentType: false,    //不可缺
+            processData: false,    //不可缺
+            success:function(data){
+                console.log(data);
+                if (data.code != 1) {
+                    $("#successMsg").html("上传失败,请检查图片大小或格式!").show(300).delay(200).fadeOut(900);  
+                }else{
+                    console.log(data.photo);
+                    $(".imgurl").attr("src",data.photo);
+                    $("#url").attr("value",data.photo);
+                    $("#successMsg").html("上传成功!").show(300).delay(200).fadeOut(900);  
+                }
+            },
+
+        });
+    });
+</script>
 ```
