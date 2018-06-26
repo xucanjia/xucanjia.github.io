@@ -3,6 +3,44 @@ layout: post
 category: ['Thinkphp5']
 title: Thinkphp5 代码片段
 ---
+
+## 整合Ueditor
+[百度编辑器下载](http://ueditor.baidu.com/website/download.html)
+
+```html
+<div class="box box-primary">
+    {include file="template/form_header" /}
+    <form id="dataForm" class="dataForm form-horizontal" action="__URL__/updatespremark/proid/{$data.productid}/v/1" method="post" enctype="multipart/form-data">
+        <div class="box-body">
+             <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">商品详情</label>
+                <div class="col-sm-10 col-md-4">
+                    <textarea class="e1"  type="text/plain"  name="spremark1" id="EditorId1" placeholder="请输入内容">{$data.spremark1}</textarea>  
+                </div>
+            </div>      
+            {include file="template/form_footer" /}
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript" charset="utf-8">//初始化编辑器  
+     window.UEDITOR_HOME_URL = "/ueditor/";//配置路径设定为UEditor所放的位置  
+     window.onload=function(){  
+        window.UEDITOR_CONFIG.initialFrameHeight=300;//编辑器的高度  
+        window.UEDITOR_CONFIG.initialFrameWidth=600;//编辑器的宽度  
+        var editor = new UE.ui.Editor({  
+            imageUrl : '',  
+            fileUrl : '',  
+            imagePath : '',  
+            filePath : '',  
+            imageManagerUrl:'', //图片在线管理的处理地址  
+            imageManagerPath:'__ROOT__/'  
+        });  
+        editor.render("EditorId1");//此处的EditorId与<textarea name="content" id="EditorId">的id值对应 </textarea>  
+    }  
+</script>  
+```
+
 # 查 增 改
 ```php
     // 查
