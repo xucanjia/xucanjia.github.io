@@ -3,7 +3,82 @@ layout: post
 category: ['PHP']
 title: 非常有用的PHP函数
 ---
-收集整理的非常有用的PHP函数
+## 收集整理的非常有用的PHP函数
+```php
+/**
+ * 根据二维数组某个key分组
+ * $arr : 二维数组
+ * $key: 需要分组的key
+ */
+function array_group_by($arr, $key)
+{
+    $grouped = [];
+    foreach ($arr as $value) {
+        $grouped[$value[$key]][] = $value;
+    }
+    // Recursively build a nested grouping if more parameters are supplied
+    // Each grouped array value is grouped according to the next sequential key
+    if (func_num_args() > 2) {
+        $args = func_get_args();
+        foreach ($grouped as $key => $value) {
+            $parms = array_merge([$value], array_slice($args, 2, func_num_args()));
+            $grouped[$key] = call_user_func_array('array_group_by', $parms);
+        }
+    }
+    return $grouped;
+}
+```
+```php
+/**
+ * $arr 二维数组
+ * 根据数组中的某个键合并数组
+ * array (
+  0 => 
+  array (
+    'id' => 1023,
+    'work_date' => '2018-07-01 00:00:00',
+  ),
+  1 => 
+  array (
+    'id' => 1245,
+    'work_date' => '2018-07-02 00:00:00',
+  ),
+  2 => 
+  array (
+    'id' => 1547,
+    'work_date' => '2018-07-03 00:00:00',
+  ),
+ */
+function arrKey($arr)
+{
+    $res = array(); //想要的结果
+    foreach ($result as $k => $v) {
+      $res[$v['time']][] = $v;
+    }
+}
+```
+```php
+/**
+ *  获取 月 起始时间戳和结束时间戳
+ */
+function theMonth($y,$m='')
+{
+    if ($y == '' || $y == null) {
+        throw new Exception("参数年份$y未传递!");
+    }
+
+    if ($m == '') {
+        $bg = mktime(0,0,0,date('m'),1,date('Y'));
+        $ed = mktime(23,59,59,date('m'),date('t'),date('Y'));    
+    }else{
+        $month = $y."-".$m;//当前年月  
+        $bg = strtotime($month);//指定月份月初时间戳  
+        $ed = mktime(23, 59, 59, date('m', strtotime($month))+1, 00);//指定月份月末时间戳  
+    }
+
+    return  [$bg,$ed];
+}
+```
 ```php
 /*
 * 判断 $array中是否存在$value;
