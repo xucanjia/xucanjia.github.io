@@ -12,28 +12,27 @@ document.write("<span style='white-space: pre'>"+"1  2    3"+"</span>")
 ## jqury提示消息并自动消失
 ```zsh
 Html:
-<div id="successMsg" class="successMsg">  
-        
-</div> 
-Style:
+<div id="successMsg" class="successMsg">
+
+</div>
 <style type="text/css">
-.successMsg {  
+.successMsg {
     width: 300px;
-    display: none;  
-    color: #fff;  
-    text-align: center;  
-    position: absolute;  
+    display: none;
+    color: #fff;
+    text-align: center;
+    position: fixed;
     top:20%;
     left: 40%;
     background: #3c763d;
-    font-size: 16px;  
-    z-index: 9999;  
+    font-size: 16px;
+    z-index: 9999;
     border:1px solid #ccc;
-    border-radius: 5px;  
-    padding: 8px;  
+    border-radius: 5px;
+    padding: 8px;
     align-content: center;
-    box-shadow:2px 2px 5px #ddd;   
-}      
+    box-shadow:2px 2px 5px #ddd;
+}
 </style>
 js:
 $("#successMsg").html("这里是消息！！！").show(300).delay(200).fadeOut(900);  
