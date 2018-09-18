@@ -3,6 +3,107 @@ layout: post
 category: ['Thinkphp5']
 title: Thinkphp5 代码片段
 ---
+## Excel导入
+```php
+    public function import()
+    {
+        //import('phpexcel.PHPExcel', EXTEND_PATH);//方法二
+        vendor("PHPExcel.PHPExcel"); //方法一
+        $objPHPExcel = new \PHPExcel();
+ 
+        //获取表单上传文件
+        $file = request()->file('excel');
+        if (!$file) {
+            $this->error('请选择文件!','index');
+        }
+        $path = ROOT_PATH . 'public' . DS . 'uploads'. DS . 'excel/';
+        $info = $file->validate(['size'=>20480,'ext'=>'xlsx,xls,csv'])->move($path);
+        if($info)
+        {
+            Db::startTrans();
+            try{  
+                $exclePath = $info->getSaveName();  //获取文件名
+                $file_name = $path . $exclePath;   //上传文件的地址
+                $objReader =\PHPExcel_IOFactory::createReader('Excel2007');
+                if(!$objReader->canRead($file_name)){
+                    $objReader = \PHPExcel_IOFactory::createReader('Excel5');
+                }
+                $obj_PHPExcel =$objReader->load($file_name, $encode = 'utf-8');  //加载文件内容,编码utf-8
+              
+                $excel_array=$obj_PHPExcel->getsheet(0)->toArray();   //转换为数组格式
+                array_shift($excel_array);  //删除第一个数组(标题);
+                $data = [];
+                $i=0;
+                foreach($excel_array as $k=>$v)
+                {
+                    $n = $k+2;
+                    $typetxt = trim($v[0]);
+                    if (!in_array($typetxt, ['单选','多选'])) throw new \think\Exception("请填写正确的类型文字!");
+
+                    if ($typetxt =="单选") {
+                        $type = 1;
+                    }
+                    if ($typetxt =="多选") {
+                        $type = 2;
+                    }
+
+                    $data[$k]['type']    = $type;
+                    $data[$k]['topic']   = trim($v[1]);
+                    $data[$k]['choose1'] = trim($v[2]);
+                    $data[$k]['choose2'] = trim($v[3]);
+                    $data[$k]['choose3'] = trim($v[4]);
+                    $data[$k]['choose4'] = trim($v[5]);
+                    $data[$k]['answer']  = trim($v[6]);
+                    $data[$k]['score']   = trim($v[7]);
+                    $data[$k]['status']  = 1;
+                    $data[$k]['create_time'] = date('Y-m-d H:i:s');
+                    
+                    if(!$data[$k]['topic']) throw new \think\Exception("表格第{$n}行,请填写题目!");
+                    if(!$data[$k]['answer']) throw new \think\Exception("表格第{$n}行,请填写答案!");
+                    if(!$data[$k]['choose1']) throw new \think\Exception("表格第{$n}行,请填写选项A!");
+                    if(!$data[$k]['choose2']) throw new \think\Exception("表格第{$n}行,请填写选项B!");
+                    if(!$data[$k]['choose3']) throw new \think\Exception("表格第{$n}行,请填写选项C!");
+                    if(!$data[$k]['choose4']) throw new \think\Exception("表格第{$n}行,请填写选项D!");
+                    if(!$data[$k]['score']) throw new \think\Exception("表格第{$n}行,请填写分值!");
+
+                    if(!is_numeric($data[$k]['score']) || $data[$k]['score']<0) throw new \think\Exception("表格第{$n}行,请填写正确的分值!");
+
+                    $cha = ['A','B','C','D'];
+                    $answer = str_split($data[$k]['answer']);
+                    foreach ($answer as $v) {
+                        if (!in_array($v,$cha)) throw new \think\Exception("表格第{$n}行,答案选项只能是".implode(',', $cha));
+                    }
+                    $num = count($answer);
+                    if ($data[$k]['type'] == 1) {
+                        if ($num>1) throw new \think\Exception("表格第{$n}行,您选择了单选,请填写正确的答案!");
+                    }
+
+                    if ($data[$k]['type'] == 2) {
+                        if ($num==1) throw new \think\Exception("表格第{$n}行,您选择了多选,请填写正确的答案!");
+                    }     
+
+                    $i++;
+                }
+
+                $success = Db::name('Test')->insertAll($data); //批量插入数据
+   
+                $error = $i-$success;
+
+                if ($error != 0) throw new \think\Exception("插入失败,应该插入{$i}条,实际插入{$success}条");
+
+                Db::commit();         
+            } catch (\Exception $e) {
+                Db::rollback();
+                $this->error($e->getMessage());
+            }            
+
+            $this->success("导入成功!", 'index');            
+        }
+        else{
+            $this->error($file->getError());            
+        }
+    }
+```
 
 ## 整合Ueditor
 [百度编辑器下载](http://ueditor.baidu.com/website/download.html)
