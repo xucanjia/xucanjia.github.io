@@ -3,6 +3,63 @@ layout: post
 category: ['Thinkphp5']
 title: Thinkphp5 代码片段
 ---
+
+## 打印表单
+```html
+<button onclick="preview();" class="btn btn-success">打印表单</button>    <!-- //调用打印js代码 -->
+<!--startprint--><!-- 打印开始位置符合 -->
+<!-- 要打印的数据代码 -->
+<!--endprint--><!-- //打印结束位置符合 -->
+```
+```javascript
+<script type="text/javascript">
+    function preview(){
+         bdhtml=window.document.body.innerHTML;
+         sprnstr="<!--startprint-->";//必须在页面添加<!--startprint-->和<!--endprint-->而且需要打印的内容必须在它们之间
+         eprnstr="<!--endprint-->";
+         prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17);
+         prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));
+         var newwin = window.open("");
+         var css="<style>table{width: 100%; text-align: left; border-collapse: collapse; background: #fff; font: 16px '宋体'; color:#333;}"
+         // +"table div{width: 16px; height: 16px; border: 1px solid #959595; margin: 0 auto; background: #fff;}"
+         +"td {height: 22px; line-height: 22px; text-align: center; font-size: 14px;}"
+         +"td.bgred { color: #ca231d; font-size:12px}"
+         +"table div.current{background: url(../img/gou2.png) center no-repeat #fff;}</style>"
+         newwin.document.body.innerHTML=css+prnhtml;
+         newwin.print(); 
+    }   
+
+</script>
+```
+## 文件下载
+```php
+    public function downexcel()
+    {
+        $file_name = "fucai.xls";     //下载文件名    
+        $file_dir = "./down/";        //下载文件存放目录    
+        //检查文件是否存在    
+        if (! file_exists ( $file_dir . $file_name )) {    
+            header('HTTP/1.1 404 NOT FOUND');  
+        } else {    
+            //以只读和二进制模式打开文件   
+            $file = fopen ( $file_dir . $file_name, "rb" ); 
+
+            //告诉浏览器这是一个文件流格式的文件    
+            Header ( "Content-type: application/octet-stream" ); 
+            //请求范围的度量单位  
+            Header ( "Accept-Ranges: bytes" );  
+            //Content-Length是指定包含于请求或响应中数据的字节长度    
+            Header ( "Accept-Length: " . filesize ( $file_dir . $file_name ) );  
+            //用来告诉浏览器，文件是可以当做附件被下载，下载后的文件名称为$file_name该变量的值。
+            Header ( "Content-Disposition: attachment; filename=" . $file_name );    
+
+            //读取文件内容并直接输出到浏览器    
+            echo fread ( $file, filesize ( $file_dir . $file_name ) );    
+            fclose ( $file );    
+            exit ();    
+        }        
+    }
+```
 ## Excel导入
 ```php
     public function import()
