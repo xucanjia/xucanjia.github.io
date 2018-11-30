@@ -4,7 +4,10 @@ category: ['mysql']
 title: mysql相关
 ---
 # 搜索字符串在字段中的数据
+`SELECT * FROM user WHERE  tag_id LIKE '%,3' OR tag_id LIKE '%,3,%' OR tag_id Like '3,%'`
 ![](https://ws1.sinaimg.cn/large/95bc1052gy1fxq1wstz1cj20m006kwem.jpg)
+
+`SELECT * FROM user WHERE FIND_IN_SET(3,tag_id)`
 ![](https://ws1.sinaimg.cn/large/95bc1052gy1fxq1wsxl3ij20e706v0su.jpg)
 ```zsh
 // tp5中可以这写
