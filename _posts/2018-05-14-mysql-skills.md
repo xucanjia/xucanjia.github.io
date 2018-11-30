@@ -3,6 +3,19 @@ layout: post
 category: ['mysql']
 title: mysql相关
 ---
+# 搜索字符串在字段中的数据
+![](https://ws1.sinaimg.cn/large/95bc1052gy1fxq1wstz1cj20m006kwem.jpg)
+![](https://ws1.sinaimg.cn/large/95bc1052gy1fxq1wsxl3ij20e706v0su.jpg)
+```zsh
+// tp5中可以这写
+$map['tag_id'] = [
+    ['like',"{$map['tag_id']},%"],
+    ['like',"%,{$map['tag_id']}"],
+    ['like',"%,{$map['tag_id']},%"],
+    'or'
+];
+```
+
 # 关于批量更新
 ### 批量修改某个字段,根据某个条件
 ```zsh
