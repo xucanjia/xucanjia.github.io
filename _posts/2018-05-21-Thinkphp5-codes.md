@@ -3,7 +3,26 @@ layout: post
 category: ['Thinkphp5']
 title: Thinkphp5 代码片段
 ---
+## paginate()分页后给结果集追加字段和数据
+```php
+public function index(){
+    $sql = "";
+    $list = "";
+    $pagenumber = 20;//默认分页条数
 
+    //查询数据
+    $list = Db::name('wcmall_type','id,name,sort')->where($sql)->order('sort asc')->paginate($pagenumber,false,['query'=>request()->param()])->each(function($item, $key){
+        $wctypeid = $item["id"]; //获取数据集中的id
+        $num = Db::name('wcmall_type_attribute')->where("wctypeid='$wctypeid'")->count('id'); //根据ID查询相关其他信息
+        $item['num'] = $num; //给数据集追加字段num并赋值
+        return $item;
+    });
+    $page = $list->render();
+    //输出到模板
+    return view('type/index',['list'=>$list,'page'=>$page,'title'=>'商品类型']);
+
+}
+```
 ## 打印表单
 ```html
 <button onclick="preview();" class="btn btn-success">打印表单</button>    <!-- //调用打印js代码 -->
