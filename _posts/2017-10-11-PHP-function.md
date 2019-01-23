@@ -4,6 +4,20 @@ category: ['PHP']
 title: 非常有用的PHP函数
 ---
 ## 收集整理的非常有用的PHP函数
+
+```php
+//type 0:加密 1:解密
+function encryption($value,$type=0){
+// $key=md5(‘www.tongpankt.com’);
+$key=config(‘encryption_key’);
+if($type == 0){//加密
+return str_replace(‘=’, ”, base64_encode($value ^ $key));
+}else{
+$value=base64_decode($value);
+return $value ^ $key;
+}
+}
+```
 ```php
 /**
  * 根据二维数组某个key分组

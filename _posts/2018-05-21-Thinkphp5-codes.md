@@ -3,6 +3,63 @@ layout: post
 category: ['Thinkphp5']
 title: Thinkphp5 代码片段
 ---
+
+```php
+// 在公共的common.php中
+
+// 字符串截取并且超出显示省略号
+
+function subtext($text, $length)
+
+{
+
+if(mb_strlen($text, ‘utf8’) > $length)
+
+return mb_substr($text,0,$length,’utf8′).’ …’;
+
+return $text;
+
+}
+
+// 在模版中调用则：
+
+{$tops.title | subtext=18}
+```
+## 订单展示
+比如上面的是一个订单的样式，可是有的订单只有一个商品，但是有的订单有多个商品，所以可能需要展示多个商品列表
+
+也就是下面的那个框子里面要展示多个商品
+
+而且上面的展示的是商品基本信息，下面展示的是订单商品信息
+
+再看看我的数据表有goods商品表，order订单表，order_goods订单商品表
+
+上面需要的所有的信息都包含在这三张表里面
+
+有了下面的设计思路：
+
+从order表里面查询到订单的基本信息：比如订单号、发货状态，收货人等
+
+再从order_goods表里面找到当前订单的商品信息，并且循环在当前订单的基本信息下展示
+
+再有就是order_goods里面没有存放商品的名称、缩略图基本信息，因为这些信息不能写死的商品订单表里面
+
+所以还需要order_goods表关联goods商品表获取到商品的缩略图和商品名称等基本信息
+```php
+public function orderlist(){
+        $uid = session('uid');
+        $orderRes = db('order')->field('id,out_trade_no,user_id,order_total_price,order_status,pay_status,post_status,order_time,name')->where('user_id',$uid)->paginate(10,false,['query'=>request()->param()])->each(function($item, $key){
+        $orderid = $item["id"]; //获取数据集中的id
+        $goodsRes = db('orderGoods')->alias('og')->field('g.mid_thumb,g.goods_name,og.member_price,og.goods_attr_str,og.goods_num')->join('goods g',"g.id = og.goods_id")->where('order_id',$orderid)->select(); //根据ID查询相关其他信息
+        $item['goods'] = $goodsRes; //给数据集追加字段num并赋值
+        return $item;
+    });
+        $this->assign([
+            'orderRes'=>$orderRes
+            ]);
+        return view();
+    }
+```
 ## paginate()分页后给结果集追加字段和数据
 ```php
 public function index(){
