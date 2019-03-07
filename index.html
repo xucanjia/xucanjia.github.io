@@ -39,22 +39,51 @@ index: true
   <span class="pagination-item older">下一页&nbsp;&nbsp;<i class="fa fa-arrow-right"></i></span>
   {% endif %}
 </div>
-<script type="text/javascript">
-  $(function(){ 
-    arrMusicID = [33469292,32648543,28287132,26511034,435305771,27588029,41462985,28656150,4010799]; 
-    musicID = Math.floor(Math.random()*(arrMusicID.length))  $('body').css('height',document.documentElement.clientHeight -5); 
-    if (!Number.isInteger(arrMusicID[musicID])) return;  
-    var iframe = document.createElement('iframe'); 
-    iframe.id="bgm";
-    iframe.style = "position: absolute; bottom: 0; left: 30px; border: 0px;";
-    iframe.src = '//music.163.com/outchain/player?type=2&id=' +arrMusicID[musicID]+ '&auto=1&height=32'; 
-    console.log(iframe.src) 
-    iframe.frameborder="no"; 
-    iframe.marginwidth="0"; 
-    iframe.marginheight="0"; 
-    iframe.width=250; 
-    iframe.height=52; 
-    document.body.appendChild(iframe); 
-  });
+<!-- 计算网站运行时间 --> <span style="font-size:12px;"><script language=JavaScript> 
+ function secondToDate(second) {
+     if (!second) {
+        return 0;
+     }
 
-</script>
+ var time = new Array(0, 0, 0, 0, 0);
+
+ if (second >= 365 * 24 * 3600) {
+     time[0] = parseInt(second / (365 * 24 * 3600));
+     second %= 365 * 24 * 3600;
+ }  
+
+ if (second >= 24 * 3600) {
+     time[1] = parseInt(second / (24 * 3600));
+     second %= 24 * 3600;
+ }
+
+ if (second >= 3600) {
+     time[2] = parseInt(second / 3600);
+     second %= 3600;
+ }
+
+ if (second >= 60) {
+     time[3] = parseInt(second / 60);
+     second %= 60;
+ }
+
+ if (second > 0) {
+     time[4] = second;
+ }
+    return time;
+}
+</script> <!-- 动态显示网站运行时间 --> <script type="text/javascript" language="javascript">
+    function setTime() {
+        var create_time = Math.round(new Date(Date.UTC(2018, 05, 05, 0, 0, 0)).getTime() / 1000);
+        var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+        currentTime = secondToDate((timestamp - create_time));
+        currentTimeHtml = '本站已安全运行' + currentTime[0] + '年' + currentTime[1] + '天' + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4] + '秒';
+        document.getElementById("htmer_time").innerHTML = currentTimeHtml;
+    }
+    setInterval(setTime, 1000);
+</script></span>
+--------------------- 
+作者：ds19991999 
+来源：CSDN 
+原文：https://blog.csdn.net/ds19991999/article/details/81293467 
+版权声明：本文为博主原创文章，转载请附上博文链接！
