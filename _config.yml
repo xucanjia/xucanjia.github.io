@@ -1,0 +1,51 @@
+# Site settings
+title:
+email: 327083961@qq.com
+description: > # this means to ignore newlines until "baseurl:"
+  许灿佳的博客
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: xucanjia.com # the base hostname & protocol for your site
+rss_url: /pages/feed.xml
+author: xu canjia
+
+# Sidebar filter
+# Choose 'tag' or 'category' as filter in sidebar.
+filter: 'category'
+recent_num: 20
+
+# Social account
+# twitter: suyan404
+# weibo: suyan0830
+github: xucanjia
+# instagram: suyan404
+# linkedin: suyan404
+
+# avatar and Favicon
+avatar: https://ws1.sinaimg.cn/large/95bc1052gy1g0vcrnuwcmj20dw0dwt96.jpg
+
+favicon: https://ws1.sinaimg.cn/large/95bc1052gy1g0vcuertfkj201c01cdfl.jpg
+
+# disqus config
+disqus:
+  shortname: xucanjia
+
+# google analytics config
+ga:
+  id: UA-54767140-1
+  url: xucanjia.com
+
+# Build settings
+permalink: /:year/:month/:day/:title.html
+markdown: kramdown
+highlighter: rouge
+mathjax: disabled
+sass:
+  style: compressed
+
+# Jekyll Plugin
+# https://help.github.com/articles/adding-jekyll-plugins-to-a-github-pages-site/
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
