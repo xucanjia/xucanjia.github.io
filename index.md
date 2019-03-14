@@ -1,5 +1,5 @@
 ---
-title: about
+title: About
 layout: post
 ---
 
@@ -8,4 +8,7 @@ layout: post
 #### 收藏
 
 [听雨](https://rainbowhunt.me/)
+
+
+[听雨](https://rainymood.com/)
 
