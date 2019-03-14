@@ -1,13 +1,11 @@
 ---
-title: xucanjia
+title: about
 layout: post
 ---
 
-## 关于我
+蓝 天 白 云 漂 。。。
 
-蓝天白云漂 。
-
-### 收藏
+#### 收藏
 
 [听雨](https://rainbowhunt.me/)
 
