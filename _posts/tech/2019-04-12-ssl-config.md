@@ -1,10 +1,10 @@
 ---
 layout: post
 category: 技术
-title: ssl
+title: SSL配置
 ---
 
-phpstudy 配置 ssl证书
+## phpstudy 配置 ssl证书
 1.打开 php扩展  →  php-openssl
 
 2.修改httpd.conf文件
