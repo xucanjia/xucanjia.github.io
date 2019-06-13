@@ -19,6 +19,31 @@ EA7E-1153259
 F913BE58 42FEA319 F954EFDD AE881E0B
 ------ END LICENSE ------
 ```
+# 解决sublime text 3使用Install Package时出现There are no packages available for installation问题
+网络的原因无法访问 https://packagecontrol.io/channel_v3.json 
+
+所以我们自己指定一下channel_v3.json位置
+[下载地址](https://share.weiyun.com/5g7cA6z)
+
+打开`Preferences->Package Setting->Package Control ->Setting User`代码如下
+{
+    "bootstrapped": true,
+    "channels":
+    [
+        "D:/channel_v3.json"
+    ],
+    "in_process_packages":
+    [
+    ],
+    "installed_packages":
+    [
+        "ChineseLocalizations"
+    ]
+}
+
+
+
+
 # 设置
 ```zsh
 {
