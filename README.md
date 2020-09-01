@@ -1,7 +1,11 @@
 ### 我的博客
 
-地址：[xucanjia](xucanjia.com)
 
+
+### 此版本已经弃用
+最新版地址
+地址：[xucanjia](https://xucanjia.gitee.io/)
+旧版本地址：[xucanjia](xucanjia.com)
 ### 安装说明
 
 1. fork库到自己的github
