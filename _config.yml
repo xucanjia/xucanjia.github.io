@@ -23,7 +23,7 @@ github: xucanjia
 # avatar and Favicon
 avatar: ./head2.jpg
 
-favicon: https://ws1.sinaimg.cn/large/95bc1052gy1g0vcuertfkj201c01cdfl.jpg
+favicon:
 
 # disqus config
 disqus:
