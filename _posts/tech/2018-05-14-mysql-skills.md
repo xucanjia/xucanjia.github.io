@@ -4,7 +4,7 @@ category: 技术
 title: mysql相关
 ---
 # 在Yii 2.0框架中使用DAO
-```PHP
+```php
 //Query All
 $topics = Yii::$app->db->createCommand('SELECT * FROM yiilib.topics')->queryAll();
 
