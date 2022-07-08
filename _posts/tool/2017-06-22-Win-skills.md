@@ -3,6 +3,9 @@ layout: post
 category: 工具
 title: Win常用的
 ---
+## 下载vscode慢速问题
+复制下载地址,把其中的域名换为`vscode.cdn.azure.cn`,替换为国内镜像地址
+
 ## Win命令行提示 `php不是内部或外部命令`
 
 环境变量设置下，要把php的执行文件,也就是php.exe设置到环境变量里面

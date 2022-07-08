@@ -3,6 +3,10 @@ layout: post
 category: 工具
 title: Mac的小东西
 ---
+## 显示已损坏打开办法
+```bash
+sudo xattr -r -d com.apple.quarantine 路径（在应用程序中直接拖入终端）
+```
 
 ## Mac Win7双系统, Win7时间少8小时解决方法
 1. Win + R(开始 > 运行), 输入 regedit 回车 打开注册表
